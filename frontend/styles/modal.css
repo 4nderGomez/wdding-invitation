@@ -1,0 +1,95 @@
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.3);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);;
+
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+}
+
+/* Inputs */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    margin: 10px 0 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Botón */
+.modal-content button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #c8a27c;
+    color: white;
+    font-weight: bold;
+}
+
+.modal.active {
+    display: flex;
+}
+
+#rsvpForm input[type="email"] {
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: auto;
+    padding: 5px;
+
+    background: transparent;
+    border: none;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--bsckground);
+
+    cursor: pointer;
+}
+
+.close-btn_hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin:  0;
+}

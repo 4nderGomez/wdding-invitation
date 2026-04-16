@@ -1,0 +1,160 @@
+export function initSubmitForm() {
+    const form = document.getElementById("rsvpForm");
+    if(!form) return;
+
+    form.addEventListener("input", () => {
+        const data = {
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            city: document.getElementById("city").value,
+            message: document.getElementById("message").value,
+        };
+
+        localStorage.setItem("rsvpDraft", JSON.stringify(data));
+    });
+
+    //recuperando datos guardados
+    const saved = localStorage.getItem("rsvpDraft");
+
+    if(saved) {
+        const data = JSON.parse(saved);
+        
+        document.getElementById("phone").value = data.phone || "";
+        document.getElementById("email").value = data.email || "";
+        document.getElementById("city").value = data.city || "";
+        document.getElementById("message").value = data.message || "";
+    }
+
+    //Submit
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando...";
+
+        //Obtención de datos basicos
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const city = document.getElementById("city").value;
+        const message = document.getElementById("message").value;
+
+        //Obtención de los adultos y niños
+        const guests = [];
+
+        //Invitado principal
+        const mainName = document.getElementById("mainName").value;
+        const mainLastname = document.getElementById("mainLastname").value;
+
+        guests.push({
+            name: mainName,
+            lastname: mainLastname,
+            type: "adult"
+        });
+
+        //Invitados extra
+        document.querySelectorAll("#guestsContainer .person-row").forEach(row => {
+            const inputs = row.querySelectorAll("input");
+
+            const type = row.dataset.type || "adult";
+
+            guests.push({
+                name: inputs[0].value.trim(),
+                lastname: inputs[1].value.trim(),
+                type
+            });
+        });
+
+        //Validación
+        if(!phone.match(/^\d{10}$/)) {
+            alert("El teléfono debe tener diez digitos");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirmar asistencia";
+            return;
+        }
+
+        if(!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            alert("Correo no valido");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirmar asistencia";
+            return;
+        }
+
+        if(!mainName || !mainLastname) {
+            alert("Debes agregar al menos un invitado");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirmar asistencia";
+            return;
+        }
+
+        for(let g of guests) {
+            if(!g.name.trim() || !g.lastname.trim()) {
+                alert("Todos los invitados deben tener nombre y apellido");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Confirmar asistencia";
+                return;
+            }
+        }
+
+        //Creación del JSON
+        const data = {
+            attendance: "yes",
+            phone,
+            email,
+            city,
+            message,
+            guests
+        };
+
+        try {
+            //Envia al backend
+            const response = await fetch("http://localhost:8080/api/rsvp", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            let result;
+
+            try {
+                result = await response.json()
+            } catch {
+                result = await response.text();
+            }
+
+            if(response.ok) {
+                alert("Confirmación enviada correctamente ❤️");
+                localStorage.removeItem("rsvpDraft");
+
+                const decision = document.getElementById("attendanceDecision");
+                const btn = document.getElementById("confirmDecisionBtn");
+
+                decision.disabled = true;
+                btn.disabled = true;
+
+                document.getElementById("formModal").classList.remove("active");
+                document.body.style.overflow = "auto";
+
+                //Limpiar formulario
+                form.reset();
+                document.getElementById("guestsContainer").innerHTML = "";
+            } else {
+                if(typeof result === "object") {
+                    const messages = Object.values(result).join("\n");
+                    alert(messages)
+                } else 
+                    alert(result);
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Confirmar asistencia";
+            }
+        } catch(error) {
+            alert("No se pudo conectar con el servidor");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirmar asistencia";
+        }
+
+    })
+}

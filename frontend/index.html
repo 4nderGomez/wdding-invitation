@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación: David & Magui</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="module" src="scripts/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&family=Parisienne&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Musica en loop de fondo-->
+    <audio id="backgroundMusic" loop>
+        <source src="assets/music/misterio.mp3" type="audio/mp3">
+    </audio>
+
+    <!--Pantalla principal -->
+    <header id="hero">
+        <!-- Fondo -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenido -->
+        <div class="hero-content">
+            <p class="pre-title">Nos casamos</p>
+            <h1 class="names">David & Magui</h1>
+            <p class="date">19.diciembre.2026</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main id="mainContent">
+        <!-- Cuenta regresica -->
+        <section id="countDown">
+            <p class="count-title">FALTAN</p>
+            <div id="timer">
+                <div><p>Días</p><span id="days"></span></div>
+                <div><p>Horas</p><span id="hours"></span></div>
+                <div><p>Minutos</p><span id="minutes"></span></div>
+                <div><p>Segundos</p><span id="seconds"></span></div>
+            </div>
+
+            <p class="wedding-phrase">Celebra con nosotros el inicio de nuestra historia</p>
+        </section>
+
+        <!-- Calendario -->
+        <section id="calendar">
+            <div class="calendar-card">
+                <p class="calendar-month">Diciembre 2026</p>
+
+                <div class="calendar-grid">
+                    <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
+                    <!-- Días vacios en diciembre-->
+                    <span></span><span></span>
+                    <!-- Días -->
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                    <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                    <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+                    <!-- Día especial -->
+                    <span class="heart-day">
+                        19
+                        <div class="heart">
+                            <img src="assets/images/icons/rings.svg" alt="corazon">
+                        </div>
+                    </span>
+                    <!-- Días -->
+                    <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+                    <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Historia de los novios -->
+        <section id="story">
+            <h2>Nuestra historia</h2>
+            <p>Mini historia de como nos conocimos</p>
+            <p>Texto biblico o frase especial</p>
+            <p>Palabras para los invitados</p>
+        </section>
+
+        <!-- Fotos de los novios -->
+        <section id="gallery">
+            <h2>Fotos de los novios</h2>
+            <div class="gallery-grid">
+                <div class="gallery-row middle">
+                    <img src="assets/images/gallery/3.jpeg" alt="3">
+                </div>
+                <div class="gallery-row top">
+                    <img src="assets/images/gallery/1.jpeg" alt="1">
+                    <img src="assets/images/gallery/2.jpeg" alt="2">
+                </div>
+                <div class="gallery-row bottom">
+                    <img src="assets/images/gallery/4.jpeg" alt="4">
+                    <img src="assets/images/gallery/5.jpeg" alt="5">
+                    <img src="assets/images/gallery/6.jpeg" alt="6">
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronograma -->
+        <section id="schedule">
+            <h2>Minuto a minuto</h2>
+
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>Culto de gratitud</h3>
+                        <span class="time">4:00 PM - 5:00 PM</span>
+                        <p>Compartimos este momento especial</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/images/icons/church.svg" alt="church">
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>Ceremonia</h3>
+                        <span class="time">5:00 PM - 5:40 PM</span>
+                        <p>El inicio de nuestra historia</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/images/icons/wedding-ceremonia.svg">
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>Traslado</h3>
+                        <span class="item">5:40 PM</span>
+                        <p>Nos vemos en el salón</p>
+                    </div>
+                    <diiv class="icon">
+                        <img src="assets/images/icons/bus.svg">
+                    </diiv>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>Fotos & dinámicas</h3>
+                        <span class="time">6:10 PM - 7:00 PM</span>
+                        <p>Momento inolvidables</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/images/icons/photo.svg">
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>Cena</h3>
+                        <span class="time">7:00 PM - 8:00 PM</span>
+                        <p>Disfrutemos juntos</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/images/icons/dinner.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fotos de los invitados -->
+        <section id="photoGuest">
+            <h2>Aquí sube las fotos que has tomado</h2>
+        </section>
+
+        <!-- Fotos de los invitados -->
+        <section id="photoWeddiing">
+            <h2>Apartado para que los invitados suban fotos de su boda</h2>
+        </section>
+
+        <!-- Ubicación -->
+        <h2>Ubicaciones</h2>
+
+        <!-- Ceremonia nupcial -->
+        <div class="location-card">
+            <h3>Ceremonia</h3>
+            <p>Primeria Iglesia Bautista "El Buen Pastor"</p>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.851578583117!2d-96.60265625853548!3d16.33052624425452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b8a5e717220ef7%3A0x39c2a44a49cad48!2sIglesia%20Bautista%20%C2%ABEl%20Buen%20Pastor%C2%BB!5e0!3m2!1ses-419!2smx!4v1775436199723!5m2!1ses-419!2smx"
+                width="100%"
+                height="250"
+                style="border:0"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+            <a href="https://maps.app.goo.gl/Pi84vsVKs5cR5XqT9" target="_blank">
+                <button>Ver en Google Maps</button>
+            </a>
+        </div>
+
+        <!-- Ubicación de salón -->
+        <div class="location-card">
+            <h3>Recepción</h3>
+            <p>Salón "Gardenias"</p>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3828.533191650166!2d-96.59370613019462!3d16.34677923084257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b8a60c2b6fae0f%3A0xd2f97d3d4cb83be8!2sGardenias%2C%2070805%20Miahuatl%C3%A1n%20de%20Porfirio%20D%C3%ADaz%2C%20Oax.!5e0!3m2!1ses-419!2smx!4v1775436100421!5m2!1ses-419!2smx"
+                width="100%"
+                height="250"
+                style="border:0"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+            <a href="https://maps.app.goo.gl/LTV5VoHE3kxweb9PA" target="_blank">
+                <button>Ver en Google Maps</button>
+            </a>
+        </div>
+
+        <!-- Abrir formulario -->
+        <section id="rsvp">
+            <h2>Confirmación de asistencia</h2>
+
+            <select id="attendanceDecision">
+                <option value="">Selecciona...</option>
+                <option value="yes">Si asistiré</option>
+                <option value="no">No asistiré</option>
+            </select>
+
+            <button id="confirmDecisionBtn">Continuar</button>
+        </section>
+
+        <!-- Opción de que no asiste -->
+        <section id="declineSection" class="hidden">
+            <h3>Lamentamos que no puedas asistir</h3>
+
+            <form id="declineForm">
+                <input type="text" id="declineName" placeholder="Nombre" required>
+                <input type="text" id="declineSurname" placeholder="Apellidos" required>
+                <input type="tel" id="declinePhone" placeholder="Teléfono" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- Decide sí asistir -->
+    <div id="formModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Confirmar asistencia</h2>
+                <button id="closeModal" class="close-btn">✖</button>
+            </div>
+
+            <form id="rsvpForm">
+                <!-- Registro de invitado principal -->
+                <div class="person-row">
+                    <span class="bullet"></span>
+                    <input type="text" id="mainName" placeholder="Nombre(s)" required>
+                    <input type="text" id="mainLastname" placeholder="Apellido(s)" required>
+                </div>
+                <!-- Seccion de invitados -->
+                <div style="margin: 15px o;">
+                    <button type="button" id="addAdult">➕ Agregar adulto</button>
+                    <button type="button" id="addKid">➕ Agregar niño</button>
+                </div>
+
+                <!-- Contenedor dinamico -->
+                <div id="guestsContainer"></div>
+
+                <!-- Teléfono -->
+                <label>Número de telefono</label>
+                <input type="tel" id="phone" placeholder="Ej: 9512223344" required>
+
+                <!-- Teléfono -->
+                <label>Correo electrónico</label>
+                <input type="email" id="email" placeholder="Ej: ejemplo@gmail.com" required>
+
+                <!-- Ciudad -->
+                <label>¿Vienes fuera de Miahuatlán?</label>
+                <select id="city" required>
+                    <option value="">Selecciona...</option>
+                    <option value="yes">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <!-- Mensaje -->
+                <label>Mensaje para los novios</label>
+                <textarea id="message" placeholder="Palabras para los novios..."></textarea>
+
+                <button type="submit">Confirmar asistencia</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Con amor, David & Magui</p>
+    </footer>
+</body>
+</html>

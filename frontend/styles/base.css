@@ -1,0 +1,66 @@
+/* =========================
+   🔧 RESET BASE
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   🧍 BODY BASE
+   ========================= */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-family: var(--font-body);
+}
+
+/* =========================
+   🔘 BOTONES BASE
+   ========================= */
+button {
+    background-color: var(--blue-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   📦 SECCIONES
+   ========================= */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* =========================
+   🔠 TITULOS
+   ========================= */
+h1, h2 {
+    margin-bottom: 20px;
+    font-family: var(--font-title);
+}
+
+/* =========================
+   🖼 IMAGENES
+   ========================= */
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 16px;
+}

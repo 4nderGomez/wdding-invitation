@@ -1,0 +1,114 @@
+#schedule {
+    min-height: 100vh;
+    padding: 80px 20px;
+    background: var(--background);
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 60px;
+}
+
+/* Linea central */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: var(--secondary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Separación de items */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.timeline-time.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Tarjetas, decoración */
+.content {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.content h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.time {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* Forma visual de los iconos */
+.icon {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    background: var(--background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-item.right .icon {
+    left: -30px;
+}
+
+.icon img {
+    width: 70px;
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+        text-align: left;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .icon {
+        left: 0 !important;
+        right: auto;
+    }
+}
