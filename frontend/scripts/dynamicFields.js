@@ -5,7 +5,7 @@ export function initDynamicFields() {
 
     if(!container) return;
 
-    let adultCount = 1;
+    let adultCount = 0;
     let kidCount = 0;
 
     addAdultBtn.addEventListener("click", () => {
