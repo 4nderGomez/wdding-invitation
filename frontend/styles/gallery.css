@@ -1,53 +1,69 @@
 #gallery {
-    padding: 80px 20px;
-    background: linear-gradient(to bottom, #f8f6f3, #ffffff);;
+    padding: 100px 20px;
     text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        var(--platinum),
+        var(--blue-grey)
+    );
 }
 
 #gallery h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-    font-family: 'Playfair Display', serif;
-    color: #5a4a42;
+    margin-bottom: 50px;
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--blue-primary);
 }
 
-.gallery-grid {
-    max-width: 900px;
-    margin: 0 auto;
+/* Fotos
+    -> Movimiento
+    -> Pausa del hover
+    -> Imagenes
+    -> Hover zoom*/
+.gallery-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
     display: flex;
-    flex-direction: column;
     gap: 20px;
-    transition: transform 0.3s ease;
+
+    width: max-content;
+
+    animation: scrollGallery 40s linear infinite;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.03);
+.gallery-wrapper:hover .gallery-track {
+    animation-play-state: paused;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 100%;
+.gallery-track img {
+    width: 260px;
+    height: 360px;
+
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    box-shadow: 0 15px 35px var(--shadow-soft);
+
+    transition: transform 0.4s ease, boxshadow 0.4s ease;
 }
 
-/* Fila superior */
-.gallery-row.top {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 15px;
+.gallery-track img:hover {
+    transform: scale(1.08);
+    z-index: 2;
 }
 
-/* Imagen del medio */
-.gallery-row.middle {
-    height: 350px;
-}
+@media (max-width: 768px) {
 
-/* Fila inferior */
-.gallery-row.bottom {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    .gallery-track img {
+        width: 180px;
+        height: 260px;
+    }
+
+    .gallery-track {
+        gap: 12px;
+    }
 }

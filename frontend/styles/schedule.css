@@ -1,43 +1,59 @@
 #schedule {
-    min-height: 100vh;
-    padding: 80px 20px;
-    background: var(--background);
+    padding: 120px 20px;
     text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        var(--blue-grey),
+        var(--platinum)
+    );
 }
 
-.section-title {
-    font-family: var(--font-script);
-    font-size: 2.8rem;
-    color: var(--primary);
-    margin-bottom: 60px;
+#schedule h2 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    margin-bottom: 70px;
+    color: var(--blue-primary);
 }
 
-/* Linea central */
+/* Timeline 
+    -> Linea central*/
 .timeline {
     position: relative;
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .timeline::before {
     content: "";
     position: absolute;
-    width: 2px;
-    background: var(--secondary);
     top: 0;
     bottom: 0;
     left: 50%;
+
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--blue-secondary),
+        transparent
+    );
+
     transform: translateX(-50%);
 }
 
-/* Separación de items */
+/*Items
+    -> Alternancia */
 .timeline-item {
     position: relative;
     width: 50%;
-    padding: 20px 40px;
+    padding: 30px 40px;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
 }
 
-.timeline-time.left {
+.timeline-item.left {
     left: 0;
     text-align: right;
 }
@@ -47,48 +63,115 @@
     text-align: left;
 }
 
-/* Tarjetas, decoración */
+/* Tarjetas de cada apartado
+    -> Hover
+    -> Titulos
+    -> Hora
+    -> Texto*/
 .content {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    background: var(--platinum);
+    padding: 20px 25px;
+    border-radius: 18px;
+
+    box-shadow: 0 15´x 35px var(--shadow-soft);
+
+    display: inline-block;
+    max-width: 300px;
+
+    transition: 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-6px);
 }
 
 .content h3 {
-    color: var(--primary);
+    color: var(--blue-primary);
     margin-bottom: 5px;
 }
 
 .time {
     display: block;
-    font-size: 0.9rem;
-    color: var(--accent);
+    font-size: 0.85rem;
+    color: var(--blue-accent);
     margin-bottom: 10px;
 }
 
-/* Forma visual de los iconos */
+.content p {
+    font-size: 0.9rem;
+}
+
+/*Iconos
+    -> Posición
+    -> Imagen icono */
 .icon {
     position: absolute;
-    top: 20px;
-    right: -30px;
-    width: 50px;
-    height: 50px;
-    background: var(--background);
+    top: 37px;
+
+    width: 60px;
+    height: 60px;
+
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    box-shadow: 0 10px 25px rgba(28, 43, 72, 0.3);
+
+    z-index: 2;
+
+    animation: float 3s ease-in-out infinite;
+
+    overflow: hidden; /* 🔥 evita que sobresalgan */
+}
+
+.timeline-item.timeline-item.left .icon {
+    right: -3px;
 }
 
 .timeline-item.right .icon {
-    left: -30px;
+    left: -3px;
 }
 
 .icon img {
-    width: 70px;
-    height: 70px;
+    width: 80%;
+    height: 80%;
+
+    object-fit: contain;   /* evita deformación */
+    display: block;
+
+    transform: scale(0.9);
 }
+
+/* Conector */
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 45px;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--blue-secondary);
+    border-radius: 50%;
+
+    left: 100%;
+    transform: translateX(-50%);
+}
+
+.timeline-item.timeline-item.right::after {
+    left: 0;
+    transform: translateX(-50%);
+}
+
+/* Animación escalonada */
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+.timeline-item:nth-child(5) { animation-delay: 1s; }
+
 
 @media (max-width: 768px) {
 
@@ -98,17 +181,22 @@
 
     .timeline-item {
         width: 100%;
-        padding-left: 60px;
+        padding-left: 70px;
         padding-right: 20px;
         text-align: left;
+        left: 0 !important;
     }
 
-    .timeline-item.right {
-        left: 0;
-    }
-
-    .icon {
+    .timeline-item .icon {
         left: 0 !important;
         right: auto;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .content {
+        max-width: 100%;
     }
 }

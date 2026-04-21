@@ -1,39 +1,18 @@
 :root {
+    /* Colores principales */
+    --blue-primary: #1C2B48;
+    --blue-secondary: #8EB1D1;
+    --blue-light: #A7C7E7;
 
-  /* Brand colors */
-  --blue-dark: #1C2B48;
-  --blue-soft: #8EB1D1;
-  --blue-light: #A7C7E7;
+    /* COLORES Neutrales fríos */
+    --blue-grey: #C4D8E5;
+    --platinum: #E8ECEF;
 
-  /* Neutrales */
-  --platinum: #E8ECEF;
-  --blue-grey: #C4D8E5;
+    --blue-accent: #5F85A6;
+    --shadow-soft: rgba(28, 43, 72, 0.15);
 
-  /* Textos */
-  --text-primary: #1C2B48;
-  --text-secondary: #5F6B7A;
-  --text-muted: #8A97A6;
-  --text-light: #FFFFFF;
-
-  /* Fondos */
-  --bg-main: #F7FAFC;
-  --bg-section: #E8ECEF;
-  --card-bg: #FFFFFF;
-
-  /* ACCENTS (UX/UI) */
-  --accent-primary: #1C2B48;
-  --accent-soft: #8EB1D1;
-  --accent-hover: #163055;
-
-  /* Sombras  */
-  --shadow-soft: 0 10px 30px rgba(28, 43, 72, 0.08);
-  --shadow-medium: 0 15px 40px rgba(28, 43, 72, 0.12);
-
-  /* Borders */
-  --border-soft: 1px solid rgba(28, 43, 72, 0.08);
-
-  /* Efectos */
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --blur: blur(10px);
-
+    /* Colores de texto */
+    --text-primary: #1C2B48;
+    --text-secondary: #5F6F82;
+    --text-light: #FFFFFF;
 }

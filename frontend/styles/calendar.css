@@ -1,51 +1,139 @@
 #calendar {
-    padding: 60px 20px;
+    padding: 100px 20px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--blue-grey) 0%,
+        var(--platinum) 100%
+    );
+
     display: flex;
     justify-content: center;
-    background-color: var(--background);
 }
 
 .calendar-card {
-    background: var(--white);
-    padding: 30px 40px;
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,1);
-    text-align: center;
-    max-width: 700px;
+    background: var(--platinum);
+    border-radius: 28px;
+
+    max-width: 750px;
     width: 100%;
+
+    box-shadow: 0 25px 60px var(--shadow-soft);
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
 }
 
+/* Linea decorativa */
+.calendar-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(
+        to right,
+        var(--blue-primary),
+        var(--blue-secondary)
+    );
+}
+
+
+/* Titulo del mes */
 .calendar-month {
     font-family: var(--font-script);
     font-size: 3rem;
+
+    color: var(--blue-primary);
     margin-bottom: 25px;
-    color: var(--primary);
+
+    animation: fadeUp 1.2s ease forwards;
 }
 
+/* Días de la semana */
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 16px;
-    font-size: 1rem;
+    grid-template-columns: repeat(7,1fr);
+    gap: 14px;
+
+    font-family: var(--font-body);
+}
+
+.calendar-grid span:nth-child(-n+7) {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
 }
 
 .calendar-grid span {
-    font-size: 1.1rem;
-    padding: 10px 0;
-    color: var(--text);
+    padding: 12px 0;
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+    position: relative;
 }
 
+.calendar-grid span:hover {
+    background: var(--blue-light);
+    transform: translateY(-2px);
+}
+
+/* Día especial */
 .heart-day {
     position: relative;
-    font-weight: bold;
-    color: var(--primary);
-    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    color: var(--blue-primary);
+
+    border-radius: 14px;
+
+    transform: scale(1.08);
+
+    font-size: 1.1rem;
 }
 
 .heart {
     position: absolute;
-    top: -12px;
+    top: 13px;
     right: 50%;
-    transform: translateX(50%);
-    font-size: 1.3rem;
+    transform: translateX(10%);
+
+    align-items: center;
+    justify-content: center;
+    
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart img {
+    width: 62px;
+    height: 62x;
+}
+
+@media (max-width: 768px) {
+
+    .calendar-card {
+        padding: 30px 20px;
+    }
+
+    .calendar-month {
+        font-size: 2.2rem;
+    }
+
+    .calendar-grid {
+        gap: 10px;
+    }
+
+    .calendar-grid span {
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
 }

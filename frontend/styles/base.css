@@ -1,66 +1,160 @@
-/* =========================
-   🔧 RESET BASE
-   ========================= */
-* {
+/* Reset */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   🧍 BODY BASE
-   ========================= */
-body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    line-height: 1.6;
-    font-family: var(--font-body);
+/* HTML & Body */
+html {
+    scroll-behavior: smooth;
 }
 
-/* =========================
-   🔘 BOTONES BASE
-   ========================= */
+body {
+    font-family: var(--font-body);
+    background: var(--blue-gray);
+    color: var(--text-primary);
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+.section-soft {
+    background: linear-gradient(
+        to bottom,
+        var(--blue-grey),
+        var(--blue-light)
+    );
+}
+
+.section-clean {
+    background: var(--platinum);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Tipografía base */
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Control de imagenes en general */
+img {
+    max-width: 70%;
+    display: block;
+    border-radius: 16px;
+}
+
 button {
-    background-color: var(--blue-dark);
+    background: var(--blue-primary);
     color: var(--text-light);
     border: none;
     padding: 12px 20px;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 12px;
 
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 
-    transition: all 0.25s ease;
-    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition: all0.3s ease;
 }
 
 button:hover {
-    background-color: var(--accent-hover);
+    background: var(--blue-accent);
     transform: translateY(-2px);
 }
 
-/* =========================
-   📦 SECCIONES
-   ========================= */
-section {
-    padding: 80px 20px;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--platinum);
+
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--blue-secondary);
+    box-shadow: 0 0 0 3px rgba(142, 177, 209, 0.2, green, blue, alpha);
+}
+
+.card {
+    background: var(--platinum);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 40px var(--shadow-soft);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.text-center {
     text-align: center;
 }
 
-/* =========================
-   🔠 TITULOS
-   ========================= */
-h1, h2 {
-    margin-bottom: 20px;
-    font-family: var(--font-title);
+.hidden {
+    display: none;
 }
 
-/* =========================
-   🖼 IMAGENES
-   ========================= */
-img {
-    max-width: 100%;
-    display: block;
-    border-radius: 16px;
+/* Scroll bar elegante */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--blue-grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-secondary);
+    border-radius: 10px;
+}
+
+/* Transición entre hero y contenido general */
+#mainContent {
+    margin-top: -80px;
+    position: relative;
+    z-index: 3;
 }

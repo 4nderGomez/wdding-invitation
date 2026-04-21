@@ -1,5 +1,14 @@
 :root {
-    --font-script: 'Great Vibes', cursive;
-    --font-title: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --font-script: 'Great Vibes', cursive;        /* Nombres */
+    --font-title: 'Playfair Display', serif;      /* Títulos elegantes */
+    --font-body: 'Montserrat', sans-serif;        /* Lectura limpia */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+}
+
+p, span, input, button {
+    font-family: var(--font-body);
 }

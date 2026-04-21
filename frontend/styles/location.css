@@ -1,22 +1,118 @@
-#location {
-    background-color: #f8f6f3;
+#locations {
+    padding: 120px 20px;
+    text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        var(--platinum),
+        var(--blue-grey)
+    );
 }
 
+#location h2 {
+    margin-bottom: 60px;
+    font-family: var(--font-title);
+    color: var(--blue-primary);
+}
+
+/* Orden */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tarjetas
+    -> Hover*/
 .location-card {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    padding: 20px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    background: var(--platinum);
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 45px var(--shadow-soft);
+
+    transition: 0.4s ease;
 }
 
-.location-card h3 {
-    margin-bottom: 10px;
-    color: #5a4a42;
+.location-card:hover {
+    transform: translateY(-10px);
 }
 
-.location-card p {
-    margin-bottom: 15px;
-    color: #777;
+/* Zona de información */
+.location-info {
+    padding: 25px;
+}
+
+.location-info h3 {
+    color: var(--blue-primary);
+    margin-bottom: 5px;
+}
+
+.place {
+    font-weight: 500;
+}
+
+.time {
+    color: var(--blue-accent);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.address {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Zona de la imagenes */
+.location-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.location-image img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.location-card:hover {
+    transform: scale(1.08);
+}
+
+.overlay-text {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+
+    color: var(--text-light);
+
+    background: rgba(28, 43, 72, 0.55);
+
+    opacity: 0;
+    transition: 04s ease;
+}
+
+.location-image:hover .overlay-text {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 }
