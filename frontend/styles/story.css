@@ -1,0 +1,83 @@
+#story {
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+        to bottom,
+        var(--platinum),
+        var(--blue-grey)
+    );
+}
+
+.story-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 40px;
+    border-radius: 30px;
+    position: relative;
+    background: url("../assets/images/imagens/letter-2.png");
+    background-size: cover;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* efecto borde suave tipo carta */
+.story-card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+}
+
+.story-card h2 {
+    text-align: center;
+    font-family: var(--font-title);
+    color: var(--blue-primary);
+    margin-bottom: 50px;
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.story-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.story-row.right {
+    flex-direction: row-reverse;
+}
+
+.story-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.story-img img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-text {
+    flex: 1;
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .story-row,
+    .story-row.right {
+        flex-direction: column;
+        text-align: center;
+    }
+}

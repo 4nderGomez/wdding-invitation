@@ -1,5 +1,6 @@
 export function initSubmitForm() {
     const form = document.getElementById("rsvpForm");
+
     if(!form) return;
 
     form.addEventListener("input", () => {
@@ -130,6 +131,7 @@ export function initSubmitForm() {
 
                 const decision = document.getElementById("attendanceDecision");
                 const btn = document.getElementById("confirmDecisionBtn");
+                const specialDay = document.querySelector(".heart-day");
 
                 decision.disabled = true;
                 btn.disabled = true;
@@ -140,6 +142,10 @@ export function initSubmitForm() {
                 //Limpiar formulario
                 form.reset();
                 document.getElementById("guestsContainer").innerHTML = "";
+
+                if(specialDay) {
+                    specialDay.classList.add("confirmed");
+                }
             } else {
                 if(typeof result === "object") {
                     const messages = Object.values(result).join("\n");

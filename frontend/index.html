@@ -32,7 +32,7 @@
     </header>
     <!-- Contenido principal -->
     <main id="mainContent">
-        <!-- Cuenta regresica -->
+        <!-- Cuenta regresiva -->
         <section id="countdown">
             <p class="count-title">FALTAN</p>
             <div id="timer">
@@ -45,40 +45,46 @@
             <p class="wedding-phrase">Celebra con nosotros el inicio de nuestra historia</p>
         </section>
 
-        <!-- Calendario -->
-        <section id="calendar">
-            <div class="calendar-card">
-                <p class="calendar-month">Diciembre 2026</p>
-
-                <div class="calendar-grid">
-                    <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
-                    <!-- Días vacios en diciembre-->
-                    <span></span><span></span>
-                    <!-- Días -->
-                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
-                    <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-                    <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
-                    <!-- Día especial -->
-                    <span class="heart-day">
-                        19
-                        <div class="heart">
-                            <img src="assets/images/icons/rings.svg" alt="corazon">
-                        </div>
-                    </span>
-                    <!-- Días -->
-                    <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
-                    <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Historia de los novios -->
         <section id="story">
-            <h2>Nuestra historia</h2>
-            <p>Mini historia de como nos conocimos</p>
-            <p>Texto biblico o frase especial</p>
-            <p>Palabras para los invitados</p>
+            <div class="story-card">
+
+                <h2>Nuestra historia</h2>
+                <div class="story-content">
+
+                    <!-- Bloque 1 -->
+                    <div class="story-row-left">
+                        <div class="story-img">
+                            <img src="assets/images/icons/user.svg" alt="novio">
+                        </div>
+                        <div class="story-text">
+                            <p>
+                                Desde el primer momento supe que había algo especial en ella. 
+                                Su forma de ver la vida, su sonrisa y la tranquilidad que transmite 
+                                hicieron que cada día a su lado fuera único. Con el tiempo entendí 
+                                que no solo era amor, era hogar. Hoy agradezco cada instante juntos 
+                                y todo lo que estamos construyendo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bloque 2 -->
+                    <div class="story-row-right">
+                        <div class="story-text">
+                            <p>
+                                Nunca imaginé encontrar a alguien que me hiciera sentir tan segura 
+                                y feliz. Él llegó a mi vida en el momento perfecto, llenando mis días 
+                                de alegría, paciencia y amor. A su lado aprendí que el amor verdadero 
+                                se construye con pequeños detalles. Hoy sé que quiero caminar siempre junto a él.
+                            </p>
+                        </div>
+                        <div class="story-img">
+                            <img src="assets/images/icons/user.svg" alt="novia">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- Fotos de los novios -->
@@ -213,37 +219,74 @@
                 </div>
             </div>
         </section>
-
-        <!-- Abrir formulario -->
-        <section id="rsvp">
-            <h2>Confirmación de asistencia</h2>
-
-            <select id="attendanceDecision">
-                <option value="">Selecciona...</option>
-                <option value="yes">Si asistiré</option>
-                <option value="no">No asistiré</option>
-            </select>
-
-            <button id="confirmDecisionBtn">Continuar</button>
-        </section>
-
-        <!-- Opción de que no asiste -->
-        <section id="declineSection" class="hidden">
-            <h3>Lamentamos que no puedas asistir</h3>
-
-            <form id="declineForm">
-                <input type="text" id="declineName" placeholder="Nombre" required>
-                <input type="text" id="declineSurname" placeholder="Apellidos" required>
-                <input type="tel" id="declinePhone" placeholder="Teléfono" required>
-
-                <button type="submit">Enviar</button>
-            </form>
-
-        </section>
     </main>
 
+    <section id="rsvp-container">
+        <div class="rsvp-wrapper">
+
+            <!-- Izquierda -->
+            <div class="rsvp-left">
+                <!-- Calendario-->
+                <div class="calendar-card">
+                    <p class="calendar-month">Diciembre 2026</p>
+
+                    <div class="calendar-grid">
+                        <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
+                        <!-- Días vacios en diciembre-->
+                        <span></span><span></span>
+                        <!-- Días -->
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                        <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+                        <!-- Día especial -->
+                        <span class="heart-day">
+                            19
+                            <div class="heart">
+                                <img src="assets/images/icons/rings.svg" alt="corazon">
+                            </div>
+                        </span>
+                        <!-- Días -->
+                        <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+                        <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Derecha -->
+            <div class="rsvp-right">
+
+                <!-- ¿Asistirá? -->
+                <div id="rsvp-decision">
+                    <h2>Confirmación de asistencia</h2>
+
+                    <select id="attendanceDecision">
+                        <option value="">Selecciona...</option>
+                        <option value="yes">Sí asistiré</option>
+                        <option value="no">No asistiré</option>
+                    </select>
+
+                    <button id="confirmDecisionBtn">Continuar</button>
+                </div>
+
+                <!-- BLOQUE DECLINE (OCULTO) -->
+                <div id="declineSection" class="hidden">
+                    <button id="backToDecision" class="back-btn">✖</button>
+                    <h3>Lamentamos que no puedas asistir</h3>
+                    <form id="declineForm">
+                        <div class="form-row">
+                            <input type="text" id="declineName" placeholder="Nombre" required>
+                            <input type="text" id="declineSurname" placeholder="Apellido" required>
+                        </div>
+                        <input type="tel" id="declinePhone" placeholder="Teléfono" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Decide sí asistir -->
-    <div id="formModal" class="modal">77
+    <div id="formModal" class="modal">
 
         <div class="modal-content">
 

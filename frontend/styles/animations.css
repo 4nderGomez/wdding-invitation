@@ -40,6 +40,12 @@
     }
 }
 
+@keyframes pulse {
+    0% {transform: translateX(10%) scale(1);}
+    50% {transform: scaleX(10%) scale(1.2);}
+    100% {transform: scaleX(10%) scale(1);}
+}
+
 /* Un efecto flotante */
 @keyframes softPulse {
     0%, 100% {
