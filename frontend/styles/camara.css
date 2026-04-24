@@ -1,0 +1,46 @@
+#upload {
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+        to bottom,
+        var(--blue-grey),
+        var(--platinum)
+    );
+}
+
+.upload-card {
+    max-width: 700px;
+    width: 100%;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 60px var(--shadow-soft);
+}
+
+.upload-card h2 {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--blue-primary);
+    margin-bottom: 20px;
+}
+
+.upload-card p {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.upload-link img {
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-link img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
