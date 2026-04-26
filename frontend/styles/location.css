@@ -9,7 +9,7 @@
     );
 }
 
-#location h2 {
+#locations h2 {
     margin-bottom: 60px;
     font-family: var(--font-title);
     color: var(--blue-primary);
@@ -69,40 +69,42 @@
 /* Zona de la imagenes */
 .location-image {
     position: relative;
-    display: block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 28px auto;
     overflow: hidden;
+    border-radius: 22px;
 }
 
 .location-image img {
-    width: 100%;
+    width: 260;
     height: 250px;
-
     object-fit: cover;
-
+    display: block;
+    border-radius: 22px;
     transition: transform 0.5s ease;
 }
 
-.location-card:hover {
-    transform: scale(1.08);
+.location-image:hover img{
+    transform: scale(1.06);
 }
 
 .overlay-text {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: var(--font-title);
-    font-size: 1.2rem;
-
+    font-size: 1.15rem;
+    letter-spacing: 1px;
     color: var(--text-light);
-
     background: rgba(28, 43, 72, 0.55);
-
+    backdrop-filter: blur(4px);
     opacity: 0;
-    transition: 04s ease;
+    transition: 0.35s ease;
+    border-radius: 22px;
 }
 
 .location-image:hover .overlay-text {
@@ -111,8 +113,14 @@
 
 @media (max-width: 768px) {
 
-    .locations-grid {
+    .location-grid {
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+
+    .location-image img {
+        width: 100%;
+        max-width: 280px;
+        height: 230px;
     }
 }

@@ -123,3 +123,22 @@
         transform: translateX(-50%);
     }
 }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-30px) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(220px) rotate(180deg) translateX(20px);
+    }
+
+    100% {
+        transform: translateY(520px) rotate(360deg) translateX(-25px);
+        opacity: 0;
+    }
+}

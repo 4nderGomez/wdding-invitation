@@ -1,0 +1,121 @@
+footer {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 20px 70px;
+    text-align: center;
+    background: linear-gradient(
+        to bottom,
+        var(--blue-grey),
+        var(--platinum)
+    );
+}
+
+.footer-content {
+    position: relative;
+    z-index: 5;
+}
+
+.footer-content p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--blue-primary);
+    margin-bottom: 14px;
+    letter-spacing: 0.4px;
+}
+
+.footer-content h3 {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--blue-primary);
+    margin-bottom: 12px;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.footer-content small {
+    color: var(--blue-primary);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+
+.petal {
+    position: absolute;
+    top: -40px;
+    width: 16px;
+    height: 24px;
+    border-radius: 50% 50% 50% 0;
+    background: linear-gradient(
+        145deg,
+        #f4fbff,
+        #cbeaff,
+        #8fd0ff,
+        #5aaee6
+    );
+    opacity: 0.92;
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.45),
+        0 0 18px rgba(143,208,255,0.35),
+        0 4px 10px rgba(90,174,230,0.20);
+    filter: saturate(115%);
+    backdrop-filter: blur(1px);
+    animation: fall linear infinite;
+}
+
+/* Posiciones de los petalos */
+
+.petal:nth-child(1){left:2%;animation-duration:10s;animation-delay:0s;}
+.petal:nth-child(2){left:5%;animation-duration:13s;animation-delay:1s;}
+.petal:nth-child(3){left:8%;animation-duration:11s;animation-delay:2s;}
+.petal:nth-child(4){left:11%;animation-duration:14s;animation-delay:3s;}
+
+.petal:nth-child(5){left:14%;animation-duration:9s;animation-delay:0.5s;}
+.petal:nth-child(6){left:17%;animation-duration:12s;animation-delay:2.5s;}
+.petal:nth-child(7){left:20%;animation-duration:10s;animation-delay:1.2s;}
+.petal:nth-child(8){left:23%;animation-duration:13s;animation-delay:4s;}
+
+.petal:nth-child(9){left:26%;animation-duration:11s;animation-delay:0.3s;}
+.petal:nth-child(10){left:29%;animation-duration:14s;animation-delay:2s;}
+.petal:nth-child(11){left:32%;animation-duration:10s;animation-delay:1s;}
+.petal:nth-child(12){left:35%;animation-duration:12s;animation-delay:3.5s;}
+
+.petal:nth-child(13){left:38%;animation-duration:9.5s;animation-delay:0.7s;}
+.petal:nth-child(14){left:41%;animation-duration:13s;animation-delay:2.2s;}
+.petal:nth-child(15){left:44%;animation-duration:11s;animation-delay:1.4s;}
+.petal:nth-child(16){left:47%;animation-duration:14s;animation-delay:4.2s;}
+
+.petal:nth-child(17){left:50%;animation-duration:10s;animation-delay:0.2s;}
+.petal:nth-child(18){left:53%;animation-duration:12.5s;animation-delay:2.8s;}
+.petal:nth-child(19){left:56%;animation-duration:11s;animation-delay:1.6s;}
+.petal:nth-child(20){left:59%;animation-duration:13.5s;animation-delay:3.1s;}
+
+.petal:nth-child(21){left:62%;animation-duration:9s;animation-delay:0.8s;}
+.petal:nth-child(22){left:65%;animation-duration:12s;animation-delay:2.3s;}
+.petal:nth-child(23){left:68%;animation-duration:10.5s;animation-delay:1.3s;}
+.petal:nth-child(24){left:71%;animation-duration:14s;animation-delay:4.4s;}
+
+.petal:nth-child(25){left:74%;animation-duration:11s;animation-delay:0.6s;}
+.petal:nth-child(26){left:77%;animation-duration:13s;animation-delay:2.6s;}
+.petal:nth-child(27){left:80%;animation-duration:10s;animation-delay:1.1s;}
+.petal:nth-child(28){left:83%;animation-duration:12.5s;animation-delay:3.2s;}
+
+.petal:nth-child(29){left:86%;animation-duration:9.5s;animation-delay:0.4s;}
+.petal:nth-child(30){left:89%;animation-duration:14s;animation-delay:2.9s;}
+.petal:nth-child(31){left:93%;animation-duration:11s;animation-delay:1.8s;}
+.petal:nth-child(32){left:97%;animation-duration:13s;animation-delay:4.1s;}
+
+/* Brillo */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+}
