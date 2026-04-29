@@ -2,11 +2,7 @@
     padding: 120px 20px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-        to bottom,
-        var(--platinum),
-        var(--blue-grey)
-    );
+    background: var(--blue-grey);
 }
 
 .photoGuest-card {

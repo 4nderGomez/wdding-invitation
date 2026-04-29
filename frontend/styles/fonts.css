@@ -2,6 +2,7 @@
     --font-script: 'Great Vibes', cursive;        /* Nombres */
     --font-title: 'Playfair Display', serif;      /* Títulos elegantes */
     --font-body: 'Montserrat', sans-serif;        /* Lectura limpia */
+    --font-romantic: 'Cormorant Garamond', serif;
 }
 
 h1, h2, h3 {

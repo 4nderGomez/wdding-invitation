@@ -3,13 +3,9 @@
 
 #rsvp-container {
     padding: 120px 20px;
-    background: linear-gradient(
-        to bottom,
-        var(--blue-grey),
-        var(--platinum)
-    );
     display: flex;
     justify-content: center;
+    background: var(--blue-grey);
 }
 
 .rsvp-wrapper {

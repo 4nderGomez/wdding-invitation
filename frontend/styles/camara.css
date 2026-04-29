@@ -2,11 +2,7 @@
     padding: 120px 20px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-        to bottom,
-        var(--blue-grey),
-        var(--platinum)
-    );
+    background: var(--blue-grey);
 }
 
 .upload-card {

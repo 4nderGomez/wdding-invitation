@@ -1,12 +1,8 @@
 #story {
-    padding: 120px 20px;
+    padding: 80px 20px 70px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-        to bottom,
-        var(--platinum),
-        var(--blue-grey)
-    );
+    background: var(--blue-grey);
 }
 
 .story-card {
@@ -31,6 +27,20 @@
     pointer-events: none;
 }
 
+.story-card::after {
+    content: "";
+    position: absolute;
+    left: -90px;
+    bottom: -70px;
+    width: 115%;
+    height: 260px;
+    background: url("../assets/images/imagens/flower-6.png") center / contain no-repeat;
+    opacity: 0.55;
+    transform: rotate(-2deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .story-card h2 {
     text-align: center;
     font-family: var(--font-title);
@@ -42,6 +52,12 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
+}
+
+.story-card h2,
+.story-content {
+    position: relative;
+    z-index: 2;
 }
 
 .story-row {
@@ -75,22 +91,62 @@
 .story-text {
     grid-area: text;
     width: 100%;
-    flex: 1;
     font-family: var(--font-body);
     line-height: 2;
-    padding: 20px;
-    border-radius: 16px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(247, 250, 253, 0.10);
     backdrop-filter: blur(8px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
+    #story {
+        padding: 65px 16px 90px;
+    }
+
+    .story-card {
+        padding: 42px 22px;
+        border-radius: 26px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .story-card::after {
+        width: 150%;
+        height: 190px;
+        left: -120px;
+        bottom: -45px;
+        opacity: 0.42;
+    }
+
+    .story-content {
+        gap: 42px;
+    }
+
     .story-row {
         grid-template-columns: 1fr;
         grid-template-areas:
             "img"
             "text";
+        gap: 24px;
         text-align: center;
+    }
+
+    .story-row.right {
+        grid-template-areas:
+            "img"
+            "text";
+    }
+
+    .story-img img {
+        max-width: 190px;
+    }
+
+    .story-text {
+        text-align: center;
+        line-height: 1.8;
+        padding: 18px;
     }
 }

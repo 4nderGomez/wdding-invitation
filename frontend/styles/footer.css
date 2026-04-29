@@ -3,11 +3,7 @@ footer {
     overflow: hidden;
     padding: 90px 20px 70px;
     text-align: center;
-    background: linear-gradient(
-        to bottom,
-        var(--blue-grey),
-        var(--platinum)
-    );
+    background: var(--blue-grey);
 }
 
 .footer-content {

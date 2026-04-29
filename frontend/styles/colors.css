@@ -1,18 +1,24 @@
 :root {
+
     /* Colores principales */
-    --blue-primary: #1C2B48;
-    --blue-secondary: #8EB1D1;
-    --blue-light: #A7C7E7;
+    --blue-primary: #243B5A;
+    --blue-secondary: #7FA8CC;
+    --blue-light: #BFD8EE;
 
-    /* COLORES Neutrales fríos */
-    --blue-grey: #C4D8E5;
-    --platinum: #E8ECEF;
+    /* Base visual */
+    --blue-grey: #DCEAF7;
+    --platinum: #F7FAFD;
 
-    --blue-accent: #5F85A6;
-    --shadow-soft: rgba(28, 43, 72, 0.15);
+    /* Detalles */
+    --blue-accent: #5D88B0;
+    --shadow-soft: rgba(36, 59, 90, 0.12);
 
-    /* Colores de texto */
-    --text-primary: #1C2B48;
-    --text-secondary: #5F6F82;
+    /* Texto */
+    --text-primary: #243B5A;
+    --text-secondary: #5E748C;
     --text-light: #FFFFFF;
+
+    /* Nuevas opcionales */
+    --romantic-glow: rgba(255,255,255,0.55);
+    --glass-soft: rgba(255,255,255,0.58);
 }

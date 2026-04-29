@@ -1,44 +1,115 @@
 #countdown {
-    padding: 120px 20px 80px;
+    position: relative;
+    padding: 105px 20px 90px;
     text-align: center;
+    background: var(--blue-grey);
+    max-width: 1100px;
+    margin: -90px auto 0;
+    border-radius: 0;
+    overflow: hidden;
+}
 
+#countdown::before,
+#countdown::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 190px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 1;
+}
 
-    /*Transición entre hero y el contenido */
-    
+#countdown::before {
+    top: 85px;
+    left: 70px;
+    background-image: url("../assets/images/imagens/flower-1.png");
+    transform: rotate(180deg);
+}
+
+#countdown::after {
+    right: 65px;
+    bottom: 25px;
+    background-image: url("../assets/images/imagens/flower-1.png");
+}
+#countdown .count-title::before {
+    content: "";
+    position: absolute;
+    width: 280;
+    height: 280;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.32);
+    filter: blur(45px);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#countdown .wedding-phrase::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 22px auto 0;
     background: linear-gradient(
-        to bottom,
-        rgba(28, 43, 72, 0.85) 0%,   /* mismo tono del hero */
-        rgba(28, 43, 72, 0.6) 20%,
-        rgba(28, 43, 72, 0.3) 40%,
-        var(--blue-grey) 70%,
-        var(--blue-grey) 100%
+        to right,
+        transparent,
+        var(--blue-secondary),
+        transparent
     );
+    opacity: 0.8;
 }
 
 .count-title {
+    position: relative;
+    z-index: 2;
     font-family: var(--font-title);
     font-size: 1.8rem;
-    letter-spacing: 6px;
-    margin-bottom: 40px;
-    color: var(--text-primary);
+    letter-spacing: 8px;
+    margin-bottom: 42px;
+    color: var(--blue-primary);
+    animation: softAppear 1s ease forwards;
 }
 
 #timer {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 22px;
     flex-wrap: wrap;
 }
 
-#timer-div {
+#timer div {
     background: var(--platinum);
-    padding: 25px 20px;
+    padding: 22px 16px;
     border-radius: 20px;
-    min-width: 90px;
-
+    width: 120px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
     box-shadow:  0 15px 35px var(--shadow-soft);
-
+    border: 1px solid rgba(255, 255, 255, 0.65);
     transition: 0.3s ease;
+    animation: countFloat 2s ease-in-out infinite;
+}
+
+#timer div:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+#timer div:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+#timer div:nth-child(4) {
+    animation-delay: 1.2s;
 }
 
 #timer div:hover {
@@ -48,40 +119,60 @@
 /* Contador */
 #timer span {
     font-family: var(--font-title);
-    font-size: 2.8rem;
-    font-weight: 500;
+    font-size: 2.9rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--blue-primary);
+    animation: numberGlow 2s ease-in-out infinite;
 }
 
 /* Texto */
 #timer p {
     font-size: 0.75rem;
-    letter-spacing: 2px;
-    margin-top: 8px;
+    letter-spacing: 2.5px;
+    margin-top: 10px;
+    text-transform: uppercase;
     color: var(--text-secondary);
 }
 
 /* Frase */
 .wedding-phrase {
-    margin-top: 10px;
-    font-size: 2.3rem;
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    font-size: 2.4rem;
     font-family: var(--font-script);
     color: var(--blue-primary);
-
-    max-width: 700px;
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
 }
 
 @media(max-width: 768px) {
-    #timer{
-        gap: 15px;
-    }
-    #timer span {
-        font-size: 2.2rem;
+    #countdown {
+        margin: -65px 0 0;
+        padding: 85px 18px 70px;
     }
 
-    .wedding-phrase {
-        font-size: 1.8rem;
+    #countdown::before,
+    #countdown::after {
+        width: 120px;
+        height: 120px;
+        opacity: 0.22;
+    }
+
+    #countdown::before {
+        top: 10px;
+        left: -15px;
+    }
+
+    #countdown::after {
+        right: -10px;
+        bottom: 20px;
+    }
+
+    #timer div {
+        width: 135px;
+        min-height: 105px;
     }
 }

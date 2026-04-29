@@ -1,12 +1,7 @@
 #schedule {
     padding: 120px 20px;
     text-align: center;
-
-    background: linear-gradient(
-        to bottom,
-        var(--blue-grey),
-        var(--platinum)
-    );
+    background: var(--blue-grey);
 }
 
 #schedule h2 {

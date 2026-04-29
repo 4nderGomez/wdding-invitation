@@ -14,11 +14,10 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--blue-gray);
     color: var(--text-primary);
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
+    background: var(--blue-grey);
 }
 
 main {
@@ -27,7 +26,7 @@ main {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 72px 20px;
     position: relative;
 }
 
@@ -154,7 +153,7 @@ textarea:focus {
 
 /* Transición entre hero y contenido general */
 #mainContent {
-    margin-top: -80px;
+    margin-top: -90px;
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }

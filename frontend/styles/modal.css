@@ -5,11 +5,7 @@
     justify-content: center;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(
-        to bottom,
-        var(--blue-grey),
-        var(--platinum)
-    );
+    background: var(--blue-grey);
 }
 
 #attendanceDecision {

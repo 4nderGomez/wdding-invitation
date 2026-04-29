@@ -1,12 +1,7 @@
 #locations {
     padding: 120px 20px;
     text-align: center;
-
-    background: linear-gradient(
-        to bottom,
-        var(--platinum),
-        var(--blue-grey)
-    );
+    background: var(--blue-grey);
 }
 
 #locations h2 {
@@ -31,9 +26,7 @@
     background: var(--platinum);
     border-radius: 24px;
     overflow: hidden;
-
     box-shadow: 0 20px 45px var(--shadow-soft);
-
     transition: 0.4s ease;
 }
 
