@@ -54,7 +54,7 @@
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 15px 35px var(--shadow-soft);
-    transition: transform 0.4s ease, boxshadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     z-index: 1;
 }
 
@@ -93,33 +93,145 @@
     animation: zoomIn 0.3s ease;
 }
 
-@media (max-width: 768px) {
+/* Tablets grandes */
+@media (max-width: 1024px) {
     #gallery {
-        padding: 65px 0 75px;
+        padding: 65px 0 60px;
     }
 
     #gallery h2 {
-        font-size: 2.5rem;
-        margin-bottom: 34px;
+        font-size: 2.7rem;
+        margin-bottom: 36px;
+    }
+
+    .gallery-track {
+        gap: 18px;
+        animation-duration: 55s;
+    }
+
+    .gallery-track img {
+        width: 300px;
+        height: 380px;
+        border-radius: 18px;
+    }
+
+    .gallery-track img:hover {
+        transform: scale(1.18);
+    }
+
+    .image-modal img {
+        max-width: 82%;
+        max-height: 82%;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 58px 0 52px;
+    }
+
+    #gallery h2 {
+        font-size: 2.4rem;
+        margin-bottom: 30px;
+    }
+
+    .gallery-track {
+        gap: 15px;
+        animation-duration: 62s;
     }
 
     .gallery-track img {
         width: 240px;
-        height: 310px;
+        height: 320px;
+        border-radius: 16px;
     }
 
-    .gallery-wrapper::after {
-        height: 42px;
+    .gallery-track img:hover {
+        transform: scale(1.08);
     }
 
     .gallery-wrapper::before {
-        width: 9px;
-        height: 9px;
-        bottom: 16px;
+        width: 10px;
+        height: 10px;
+        bottom: 12px;
     }
 
     .image-modal img {
         max-width: 88%;
-        max-height: 75%;
+        max-height: 78%;
+        border-radius: 16px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    #gallery {
+        padding: 48px 0 45px;
+    }
+
+    #gallery h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .gallery-track {
+        gap: 12px;
+        animation-duration: 68s;
+    }
+
+    .gallery-track img {
+        width: 175px;
+        height: 245px;
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(36, 59, 90, 0.16);
+    }
+
+    .gallery-track img:hover {
+        transform: none;
+        filter: none;
+    }
+
+    .gallery-wrapper::before {
+        width: 8px;
+        height: 8px;
+        bottom: 8px;
+        opacity: 0.45;
+    }
+
+    .image-modal-overlay {
+        backdrop-filter: blur(6px);
+    }
+
+    .image-modal img {
+        max-width: 92%;
+        max-height: 72%;
+        border-radius: 14px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 360px) {
+    #gallery {
+        padding: 42px 0 40px;
+    }
+
+    #gallery h2 {
+        font-size: 1.8rem;
+    }
+
+    .gallery-track {
+        gap: 10px;
+    }
+
+    .gallery-track img {
+        width: 150px;
+        height: 215px;
+        border-radius: 12px;
+    }
+
+    .image-modal img {
+        max-width: 94%;
+        border-radius: 12px;
     }
 }

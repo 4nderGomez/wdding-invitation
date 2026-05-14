@@ -11,7 +11,7 @@
     padding: 60px 40px;
     border-radius: 30px;
     position: relative;
-    background: url("../assets/images/imagens/letter-6.jpeg");
+    background: url("../assets/images/imagens/letter-7.jpeg");
     background-size: 100% auto;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
     overflow: hidden;
@@ -102,52 +102,181 @@
     color: var(--text-primary);
 }
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 900px) {
+
     #story {
-        padding: 65px 16px 90px;
+        padding: 65px 18px 60px;
+    }
+
+    .story-card {
+        padding: 50px 30px;
+        border-radius: 26px;
+    }
+
+    .story-card::after {
+        left: -60px;
+        bottom: -45px;
+        width: 120%;
+        height: 220px;
+        opacity: 0.42;
+    }
+
+    .story-card h2 {
+        margin-bottom: 42px;
+        font-size: 2.5rem;
+    }
+
+    .story-content {
+        gap: 50px;
+    }
+
+    .story-row {
+        gap: 28px;
+    }
+
+    .story-img img {
+        max-width: 220px;
+    }
+
+    .story-text {
+        padding: 20px;
+        line-height: 1.85;
+        font-size: 0.98rem;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+
+    #story {
+        padding: 58px 16px 55px;
     }
 
     .story-card {
         padding: 42px 22px;
-        border-radius: 26px;
-        background-size: cover;
-        background-position: center;
+        border-radius: 24px;
+    }
+
+    .story-card::before {
+        inset: 8px;
     }
 
     .story-card::after {
-        width: 150%;
-        height: 190px;
-        left: -120px;
-        bottom: -45px;
-        opacity: 0.42;
+        left: -40px;
+        bottom: -25px;
+        width: 125%;
+        height: 180px;
+        opacity: 0.32;
+    }
+
+    .story-card h2 {
+        font-size: 2.15rem;
+        margin-bottom: 34px;
     }
 
     .story-content {
-        gap: 42px;
+        gap: 40px;
     }
 
-    .story-row {
+    /* Todas las filas verticales */
+    .story-row,
+    .story-row.right {
         grid-template-columns: 1fr;
         grid-template-areas:
             "img"
             "text";
+
         gap: 24px;
         text-align: center;
     }
 
-    .story-row.right {
-        grid-template-areas:
-            "img"
-            "text";
+    .story-img {
+        justify-content: center;
     }
 
     .story-img img {
-        max-width: 190px;
+        max-width: 240px;
+        width: 100%;
     }
 
     .story-text {
-        text-align: center;
-        line-height: 1.8;
-        padding: 18px;
+        width: 100%;
+        padding: 20px;
+        line-height: 1.75;
+        font-size: 0.95rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+
+    #story {
+        padding: 48px 12px 48px;
+    }
+
+    .story-card {
+        padding: 34px 16px;
+        border-radius: 22px;
+    }
+
+    .story-card::before {
+        inset: 6px;
+        border-radius: 18px;
+    }
+
+    .story-card::after {
+        left: -35px;
+        bottom: -10px;
+        width: 135%;
+        height: 145px;
+        opacity: 0.22;
+    }
+
+    .story-card h2 {
+        font-size: 1.9rem;
+        margin-bottom: 28px;
+    }
+
+    .story-content {
+        gap: 32px;
+    }
+
+    .story-row {
+        gap: 18px;
+    }
+
+    .story-img img {
+        max-width: 200px;
+        border-radius: 16px;
+    }
+
+    .story-text {
+        padding: 16px;
+        border-radius: 16px;
+        line-height: 1.65;
+        font-size: 0.9rem;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 360px) {
+
+    .story-card {
+        padding: 28px 12px;
+    }
+
+    .story-card h2 {
+        font-size: 1.7rem;
+    }
+
+    .story-img img {
+        max-width: 175px;
+    }
+
+    .story-text {
+        padding: 14px;
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
 }

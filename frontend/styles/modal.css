@@ -135,7 +135,7 @@
 }
 
 #rsvpForm input:focus,
-#rsvoForm select:focus,
+#rsvpForm select:focus,
 #rsvpForm textarea:focus {
     outline: none;
     border-color: var(--blue-accent);
@@ -215,9 +215,6 @@
     font-size: 0.85rem;
 }
 
-/* =========================
-   DECLINE
-========================= */
 #declineSection {
     display: flex;
     flex-direction: column;
@@ -244,4 +241,156 @@
     padding: 12px;
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    #rsvp {
+        padding: 80px 16px;
+    }
+
+    .modal {
+        padding: 16px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        max-width: 560px;
+        max-height: none;
+        margin: 28px auto;
+        padding: 30px 24px;
+        border-radius: 22px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .person-row {
+        align-items: stretch;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    #rsvp {
+        padding: 65px 14px;
+    }
+
+    #attendanceDecision {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+    }
+
+    #confirmDecisionBtn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        margin: 18px auto;
+        padding: 26px 18px;
+        border-radius: 20px;
+    }
+
+    .modal-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.45rem;
+        line-height: 1.2;
+    }
+
+    .close-btn {
+        font-size: 18px;
+    }
+
+    #rsvpForm {
+        gap: 9px;
+    }
+
+    #rsvpForm input,
+    #rsvpForm select,
+    #rsvpForm textarea,
+    #declineForm input {
+        padding: 13px 12px;
+        font-size: 0.95rem;
+    }
+
+    #rsvpForm textarea {
+        min-height: 95px;
+    }
+
+    .person-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bullet {
+        display: none;
+    }
+
+    #addAdult,
+    #addKid {
+        width: 100%;
+        margin-top: 8px;
+        padding: 11px 12px;
+    }
+
+    #rsvpForm button[type="submit"] {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    #declineSection {
+        padding: 45px 16px;
+    }
+
+    #declineForm {
+        max-width: 100%;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 390px) {
+    #rsvp {
+        padding: 55px 10px;
+    }
+
+    .modal {
+        padding: 8px;
+    }
+
+    .modal-content {
+        margin: 12px auto;
+        padding: 24px 14px;
+        border-radius: 18px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+
+    #rsvpForm label {
+        font-size: 0.82rem;
+    }
+
+    #rsvpForm input,
+    #rsvpForm select,
+    #rsvpForm textarea,
+    #declineForm input {
+        font-size: 0.9rem;
+    }
+
+    #rsvpForm ::placeholder {
+        font-size: 0.78rem;
+    }
 }

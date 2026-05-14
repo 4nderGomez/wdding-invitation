@@ -70,7 +70,7 @@
     backdrop-filter: blur(8px);
     padding: 26px 28px;
     border-radius: 22px;
-    order: 1px solid rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.55);
     box-shadow: 0 14px 34px rgba(36, 59, 90, 0.08);
     display: inline-block;
     max-width: 350px;
@@ -166,53 +166,206 @@
 .timeline-item:nth-child(5) { animation-delay: 0.8s; }
 
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 900px) {
     #schedule {
-        padding: 70px 16px 90px;
+        padding: 65px 18px 90px;
     }
 
     #schedule h2 {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
         margin-bottom: 45px;
     }
 
-    #schedule::before,
-    #schedule::after {
-        width: 150px;
-        height: 150px;
-        opacity: 0.11;
-    }
-
     .timeline {
-        max-width: 100%;
+        max-width: 760px;
     }
 
+    .timeline-item {
+        padding: 24px 45px;
+    }
+
+    .content {
+        max-width: 300px;
+        padding: 22px 24px;
+    }
+
+    .icon {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+/* Tablets pequeñas + móviles */
+@media (max-width: 768px) {
+
+    #schedule {
+        padding: 58px 16px 75px;
+    }
+
+    #schedule h2 {
+        font-size: 2.2rem;
+        margin-bottom: 38px;
+    }
+
+    /* Línea lateral */
     .timeline::before {
-        left: 32px;
+        left: 30px;
     }
 
     .timeline-item {
         width: 100%;
         left: 0 !important;
-        padding: 22px 0 22px 82px;
+
+        padding: 0 0 34px 78px;
+
         text-align: left !important;
     }
 
-    .timeline-item .icon {
-        left: 0 !important;
-        right: auto;
-        width: 64px;
-        height: 64px;
-        top: 30px;
+    .timeline-item::after {
+        left: 30px !important;
+        top: 52px;
+        transform: translateX(-50%);
     }
 
-    .timeline-item::after {
-        left: 32px !important;
-        top: 58px;
+    .timeline-item.left .icon,
+    .timeline-item.right .icon {
+        left: -4px;
+        right: auto;
     }
 
     .content {
-        max-width: 100%;
-        padding: 22px 20px;
+        width: 100%;
+        max-width: none;
+        padding: 22px 22px;
+        border-radius: 20px;
+    }
+
+    .content h3 {
+        font-size: 1.1rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .time,
+    .item {
+        font-size: 0.88rem;
+    }
+
+    .icon {
+        width: 62px;
+        height: 62px;
+        top: 26px;
+    }
+
+    .icon img {
+        width: 68%;
+        height: 68%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+
+    #schedule {
+        padding: 48px 12px 65px;
+    }
+
+    #schedule h2 {
+        font-size: 1.95rem;
+        margin-bottom: 30px;
+    }
+
+    .timeline::before {
+        left: 24px;
+    }
+
+    .timeline-item {
+        padding: 0 0 28px 62px;
+    }
+
+    .timeline-item::after {
+        left: 24px !important;
+        top: 44px;
+        width: 8px;
+        height: 8px;
+        border-width: 2px;
+    }
+
+    .content {
+        padding: 18px 18px;
+        border-radius: 18px;
+    }
+
+    .content:hover {
+        transform: none;
+    }
+
+    .content h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .time,
+    .item {
+        font-size: 0.82rem;
+        margin-bottom: 8px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        top: 24px;
+        box-shadow: 0 8px 18px rgba(28, 43, 72, 0.2);
+    }
+
+    .icon img {
+        width: 66%;
+        height: 66%;
+    }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 360px) {
+
+    #schedule h2 {
+        font-size: 1.75rem;
+    }
+
+    .timeline-item {
+        padding-left: 56px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item::after {
+        left: 20px !important;
+    }
+
+    .icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .content h3 {
+        font-size: 0.95rem;
+    }
+
+    .content p {
+        font-size: 0.85rem;
     }
 }

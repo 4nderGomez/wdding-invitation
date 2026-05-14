@@ -177,3 +177,146 @@
         max-width: 100%;
     }
 }
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+    #rsvp-container {
+        padding: 90px 18px;
+    }
+
+    .rsvp-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+        gap: 28px;
+        padding: 32px;
+    }
+
+    .rsvp-left {
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    .rsvp-right > div {
+        max-width: 100%;
+        min-height: auto;
+        padding: 42px 34px;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 850px) {
+    #rsvp-container {
+        padding: 75px 16px;
+    }
+
+    .rsvp-wrapper {
+        max-width: 650px;
+        padding: 28px;
+        border-radius: 28px;
+    }
+
+    #rsvp-decision h2 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+    }
+
+    #declineSection h3 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    #rsvp-container {
+        padding: 60px 14px;
+    }
+
+    .rsvp-wrapper {
+        padding: 22px;
+        gap: 22px;
+        border-radius: 24px;
+    }
+
+    .rsvp-left {
+        margin-bottom: 0;
+    }
+
+    .rsvp-right > div {
+        padding: 34px 22px;
+        border-radius: 22px;
+        gap: 18px;
+    }
+
+    #rsvp-decision {
+        gap: 18px;
+    }
+
+    #rsvp-decision h2 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    #attendanceDecision,
+    #declineForm input,
+    #declineForm select {
+        padding: 13px 12px;
+        font-size: 0.95rem;
+    }
+
+    #confirmDecisionBtn,
+    #declineForm button {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    #declineSection {
+        gap: 14px;
+    }
+
+    #declineForm {
+        max-width: 100%;
+        gap: 12px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .back-btn {
+        top: 12px;
+        right: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 390px) {
+    #rsvp-container {
+        padding: 50px 10px;
+    }
+
+    .rsvp-wrapper {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .rsvp-right > div {
+        padding: 32px 16px;
+        border-radius: 20px;
+    }
+
+    #rsvp-decision h2 {
+        font-size: 1.55rem;
+    }
+
+    #declineSection h3 {
+        font-size: 1.35rem;
+        line-height: 1.25;
+    }
+
+    #attendanceDecision,
+    #declineForm input,
+    #declineForm select {
+        font-size: 0.9rem;
+    }
+}

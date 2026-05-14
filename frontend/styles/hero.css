@@ -153,3 +153,197 @@
     text-shadow: 0 3px 14px rgba(0,0,0,0.35);
     animation: fadeUp 3.2s ease forwards;
 }
+
+/* Laptops pequeñas */
+@media (max-width: 1200px) {
+    #hero {
+        background-position: 72% center;
+    }
+
+    .hero-content {
+        width: min(88%, 560px);
+        margin-left: clamp(20px, 5vw, 80px);
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    #hero {
+        justify-content: center;
+        min-height: 720px;
+        background-position: 62% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(28, 43, 72, 0.52) 0%,
+                rgba(28, 43, 72, 0.38) 40%,
+                rgba(28, 43, 72, 0.55) 100%
+            );
+    }
+
+    .hero-content {
+        width: min(92%, 620px);
+        margin: 0 auto;
+        padding: 80px 0 95px;
+        transform: none;
+    }
+
+    .hero-top {
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+
+    .hero-names {
+        margin-bottom: 18px;
+    }
+
+    .name-left,
+    .name-right {
+        font-size: clamp(3.8rem, 11vw, 5.8rem);
+        line-height: 0.9;
+    }
+
+    .hero-ampersand {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero-date {
+        margin-bottom: 16px;
+    }
+
+    .hero-verse {
+        max-width: 500px;
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    #hero {
+        min-height: 100svh;
+        justify-content: center;
+        align-items: center;
+
+        background-position: 58% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(28, 43, 72, 0.52) 0%,
+                rgba(28, 43, 72, 0.42) 42%,
+                rgba(28, 43, 72, 0.72) 100%
+            );
+    }
+
+    .hero-content {
+        width: min(92%, 500px);
+        margin: 0 auto;
+        padding: 70px 0 90px;
+    }
+
+    .hero-top {
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+        margin-bottom: 18px;
+    }
+
+    .hero-names {
+        gap: 2px;
+        margin-bottom: 14px;
+    }
+
+    .name-left,
+    .name-right {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+        line-height: 0.9;
+    }
+
+    .hero-ampersand {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+        margin: 0;
+    }
+
+    .hero-seal {
+        width: 50px;
+        height: 50px;
+        margin: 8px auto 10px;
+    }
+
+    .hero-seal img {
+        width: 40px;
+    }
+
+    .hero-date {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+    }
+
+    .hero-verse {
+        max-width: 92%;
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+
+    .hero-reference {
+        margin-top: 10px;
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 390px) {
+    #hero {
+        min-height: 100svh;
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        padding: 65px 0 80px;
+    }
+
+    .hero-top {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
+    }
+
+    .name-left,
+    .name-right {
+        font-size: clamp(2.8rem, 15vw, 4.3rem);
+    }
+
+    .hero-ampersand {
+        font-size: 1.6rem;
+    }
+
+    .hero-seal {
+        width: 44px;
+        height: 44px;
+    }
+
+    .hero-seal img {
+        width: 34px;
+    }
+
+    .hero-date {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .hero-verse {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    .hero-reference {
+        font-size: 0.72rem;
+    }
+}

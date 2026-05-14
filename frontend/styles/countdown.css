@@ -38,8 +38,8 @@
 #countdown .count-title::before {
     content: "";
     position: absolute;
-    width: 280;
-    height: 280;
+    width: 280px;
+    height: 280px;
     top: -90px;
     left: 50%;
     transform: translateX(-50%);
@@ -148,31 +148,203 @@
     margin-right: auto;
 }
 
-@media(max-width: 768px) {
+/* Tablets grandes */
+@media (max-width: 1024px) {
     #countdown {
-        margin: -65px 0 0;
-        padding: 85px 18px 70px;
+        padding: 100px 18px 80px;
     }
 
     #countdown::before,
     #countdown::after {
-        width: 120px;
-        height: 120px;
+        width: 85px;
+        height: 160px;
+        opacity: 0.36;
+    }
+
+    #countdown::before {
+        top: 70px;
+        left: 35px;
+    }
+
+    #countdown::after {
+        right: 35px;
+        bottom: 20px;
+    }
+
+    .count-title {
+        font-size: 1.65rem;
+        letter-spacing: 7px;
+        margin-bottom: 36px;
+    }
+
+    #timer {
+        gap: 18px;
+    }
+
+    #timer div {
+        width: 110px;
+        min-width: 110px;
+        padding: 20px 14px;
+    }
+
+    #timer span {
+        font-size: 2.55rem;
+    }
+
+    .wedding-phrase {
+        font-size: 2.15rem;
+        max-width: 650px;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+    #countdown {
+        padding: 85px 16px 70px;
+    }
+
+    #countdown::before,
+    #countdown::after {
+        width: 70px;
+        height: 135px;
+        opacity: 0.28;
+    }
+
+    #countdown::before {
+        top: 45px;
+        left: 8px;
+    }
+
+    #countdown::after {
+        right: 8px;
+        bottom: 18px;
+    }
+
+    .count-title {
+        font-size: 1.45rem;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+    }
+
+    #timer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(105px, 1fr));
+        gap: 16px;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    #timer div {
+        width: 100%;
+        min-width: 0;
+        padding: 20px 12px;
+        border-radius: 18px;
+    }
+
+    #timer span {
+        font-size: 2.35rem;
+    }
+
+    #timer p {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .wedding-phrase {
+        margin-top: 28px;
+        font-size: 1.9rem;
+        line-height: 1.25;
+        max-width: 520px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    #countdown {
+        padding: 72px 14px 62px;
+    }
+
+    #countdown::before,
+    #countdown::after {
+        width: 58px;
+        height: 110px;
         opacity: 0.22;
     }
 
     #countdown::before {
-        top: 10px;
-        left: -15px;
+        top: 35px;
+        left: -8px;
     }
 
     #countdown::after {
-        right: -10px;
-        bottom: 20px;
+        right: -8px;
+        bottom: 12px;
+    }
+
+    .count-title {
+        font-size: 1.25rem;
+        letter-spacing: 4px;
+        margin-bottom: 26px;
+    }
+
+    #timer {
+        grid-template-columns: repeat(2, minmax(90px, 1fr));
+        gap: 12px;
+        max-width: 280px;
     }
 
     #timer div {
-        width: 135px;
-        min-height: 105px;
+        padding: 18px 10px;
+        border-radius: 16px;
+        animation: none;
+    }
+
+    #timer div:hover {
+        transform: none;
+    }
+
+    #timer span {
+        font-size: 2rem;
+    }
+
+    #timer p {
+        font-size: 0.65rem;
+        letter-spacing: 1.6px;
+        margin-top: 8px;
+    }
+
+    .wedding-phrase {
+        font-size: 1.65rem;
+        line-height: 1.25;
+        max-width: 320px;
+    }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 360px) {
+    #countdown {
+        padding: 64px 10px 56px;
+    }
+
+    .count-title {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+
+    #timer {
+        max-width: 250px;
+        gap: 10px;
+    }
+
+    #timer div {
+        padding: 16px 8px;
+    }
+
+    #timer span {
+        font-size: 1.8rem;
+    }
+
+    .wedding-phrase {
+        font-size: 1.45rem;
     }
 }

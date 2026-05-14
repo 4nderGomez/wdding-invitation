@@ -115,3 +115,85 @@ footer::before {
         transparent
     );
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+    footer {
+        padding: 80px 18px 65px;
+    }
+
+    .footer-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .petal {
+        width: 14px;
+        height: 21px;
+        opacity: 0.78;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    footer {
+        padding: 70px 16px 55px;
+    }
+
+    .footer-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        max-width: 300px;
+        margin: 0 auto 12px;
+    }
+
+    .footer-content h3 {
+        font-size: 2.35rem;
+        line-height: 1;
+    }
+
+    .footer-content small {
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+    }
+
+    .petal {
+        width: 11px;
+        height: 17px;
+        opacity: 0.62;
+        box-shadow:
+            0 0 7px rgba(255,255,255,0.35),
+            0 0 12px rgba(143,208,255,0.25);
+    }
+
+    /* Oculta algunos pétalos en móvil para que no se sature */
+    .petal:nth-child(2n) {
+        display: none;
+    }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 390px) {
+    footer {
+        padding: 62px 12px 48px;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+        max-width: 260px;
+    }
+
+    .footer-content h3 {
+        font-size: 2.1rem;
+    }
+
+    .footer-content small {
+        font-size: 0.72rem;
+        letter-spacing: 1.2px;
+    }
+
+    .petal {
+        width: 9px;
+        height: 14px;
+        opacity: 0.5;
+    }
+}
