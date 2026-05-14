@@ -127,6 +127,14 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+#declineForm select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
 #declineForm button {
     margin-top: 10px;
 }

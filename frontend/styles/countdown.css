@@ -1,10 +1,10 @@
 #countdown {
     position: relative;
-    padding: 105px 20px 90px;
+    padding: 120px 20px 90px;
     text-align: center;
     background: var(--blue-grey);
-    max-width: 1100px;
-    margin: -90px auto 0;
+    width: 100%;
+    margin: 0 auto;
     border-radius: 0;
     overflow: hidden;
 }

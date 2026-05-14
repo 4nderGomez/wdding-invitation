@@ -40,7 +40,7 @@
 }
 
 .upload-link img {
-    width: 220px;
+    width: 300px;
     transform: rotate(20deg);
     transition: 0.35s ease;
     cursor: pointer;

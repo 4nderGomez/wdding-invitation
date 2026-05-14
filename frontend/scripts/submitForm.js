@@ -162,5 +162,108 @@ export function initSubmitForm() {
             submitBtn.textContent = "Confirmar asistencia";
         }
 
-    })
+    });
+
+    //Cuando RSVP dice que no
+    const declineForm = document.getElementById("declineForm");
+
+    if (declineForm) {
+        declineForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const submitBtn = declineForm.querySelector("button[type='submit']");
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Enviando...";
+
+            const name = document.getElementById("declineName").value.trim();
+            const lastname = document.getElementById("declineSurname").value.trim();
+            const phone = document.getElementById("declinePhone").value.trim();
+            const email = document.getElementById("declineEmail").value.trim();
+            const city = document.getElementById("declineCity").value;
+
+            if (!name || !lastname) {
+                alert("Debes escribir nombre y apellido");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar";
+                return;
+            }
+
+            if (!phone.match(/^\d{10}$/)) {
+                alert("El teléfono debe tener diez dígitos");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar";
+                return;
+            }
+
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert("Correo no válido");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar";
+                return;
+            }
+
+            if (!city) {
+                alert("Selecciona si vienes fuera de Miahuatlán");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar";
+                return;
+            }
+
+            const data = {
+                attendance: "no",
+                phone,
+                email,
+                city,
+                message: "",
+                guests: [
+                    {
+                        name,
+                        lastname,
+                        type: "adult"
+                    }
+                ]
+            };
+
+            try {
+                const response = await fetch("http://localhost:8080/api/rsvp", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                let result;
+
+                try {
+                    result = await response.json();
+                } catch {
+                    result = await response.text();
+                }
+
+                if (response.ok) {
+                    alert("Respuesta enviada correctamente. Lamentamos que no puedas asistir.");
+
+                    declineForm.reset();
+
+                    document.getElementById("formModal").classList.remove("active");
+                    document.body.style.overflow = "auto";
+                } else {
+                    if (typeof result === "object") {
+                        const messages = Object.values(result).join("\n");
+                        alert(messages);
+                    } else {
+                        alert(result);
+                    }
+
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Enviar";
+                }
+            } catch (error) {
+                alert("No se pudo conectar con el servidor");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar";
+            }
+        });
+    }
 }

@@ -1,22 +1,27 @@
 #schedule {
-    padding: 120px 20px;
+    padding: 75px 20px 110px;
     text-align: center;
     background: var(--blue-grey);
+    position: relative;
+    overflow: hidden;
 }
 
 #schedule h2 {
+    position: relative;
+    z-index: 2;
     font-family: var(--font-title);
     font-size: 3rem;
-    margin-bottom: 70px;
+    margin-bottom: 55px;
     color: var(--blue-primary);
 }
 
-/* Timeline 
+/* Timeline
     -> Linea central*/
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
+    z-index: 2;
 }
 
 .timeline::before {
@@ -25,7 +30,6 @@
     top: 0;
     bottom: 0;
     left: 50%;
-
     width: 2px;
     background: linear-gradient(
         to bottom,
@@ -33,7 +37,6 @@
         var(--blue-secondary),
         transparent
     );
-
     transform: translateX(-50%);
 }
 
@@ -42,8 +45,7 @@
 .timeline-item {
     position: relative;
     width: 50%;
-    padding: 30px 40px;
-
+    padding: 24px 60px;
     opacity: 0;
     animation: fadeUp 1s ease forwards;
 }
@@ -64,36 +66,42 @@
     -> Hora
     -> Texto*/
 .content {
-    background: var(--platinum);
-    padding: 20px 25px;
-    border-radius: 18px;
-
-    box-shadow: 0 15´x 35px var(--shadow-soft);
-
+    background: rgba(247, 250, 253, 0.48);
+    backdrop-filter: blur(8px);
+    padding: 26px 28px;
+    border-radius: 22px;
+    order: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 14px 34px rgba(36, 59, 90, 0.08);
     display: inline-block;
-    max-width: 300px;
-
+    max-width: 350px;
     transition: 0.3s ease;
 }
 
 .content:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 }
 
 .content h3 {
     color: var(--blue-primary);
-    margin-bottom: 5px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
 }
 
-.time {
+.time,
+.item {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--blue-accent);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
 }
 
 /*Iconos
@@ -101,24 +109,17 @@
     -> Imagen icono */
 .icon {
     position: absolute;
-    top: 37px;
-
-    width: 60px;
-    height: 60px;
-
+    top: 38px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-shadow: 0 10px 25px rgba(28, 43, 72, 0.3);
-
-    z-index: 2;
-
+    z-index: 3;
     animation: float 3s ease-in-out infinite;
-
-    overflow: hidden; /* 🔥 evita que sobresalgan */
+    overflow: hidden;
 }
 
 .timeline-item.timeline-item.left .icon {
@@ -130,68 +131,88 @@
 }
 
 .icon img {
-    width: 80%;
-    height: 80%;
-
+    width: 72%;
+    height: 72%;
     object-fit: contain;   /* evita deformación */
     display: block;
-
-    transform: scale(0.9);
+    transform: scale(0.85);
 }
 
 /* Conector */
 .timeline-item::after {
     content: "";
     position: absolute;
-    top: 45px;
-
-    width: 12px;
-    height: 12px;
-
+    top: 65px;
+    width: 10px;
+    height: 10px;
     background: var(--blue-secondary);
+    border: 3px solid var(--platinum);
     border-radius: 50%;
-
+    box-shadow: 0 0 0 5px rgba(127,168,204,0.18);
     left: 100%;
     transform: translateX(-50%);
+    z-index: 4;
 }
 
 .timeline-item.timeline-item.right::after {
     left: 0;
-    transform: translateX(-50%);
 }
 
 /* Animación escalonada */
 .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
-.timeline-item:nth-child(4) { animation-delay: 0.8s; }
-.timeline-item:nth-child(5) { animation-delay: 1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.35s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.65s; }
+.timeline-item:nth-child(5) { animation-delay: 0.8s; }
 
 
 @media (max-width: 768px) {
+    #schedule {
+        padding: 70px 16px 90px;
+    }
+
+    #schedule h2 {
+        font-size: 2.4rem;
+        margin-bottom: 45px;
+    }
+
+    #schedule::before,
+    #schedule::after {
+        width: 150px;
+        height: 150px;
+        opacity: 0.11;
+    }
+
+    .timeline {
+        max-width: 100%;
+    }
 
     .timeline::before {
-        left: 20px;
+        left: 32px;
     }
 
     .timeline-item {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 20px;
-        text-align: left;
         left: 0 !important;
+        padding: 22px 0 22px 82px;
+        text-align: left !important;
     }
 
     .timeline-item .icon {
         left: 0 !important;
         right: auto;
+        width: 64px;
+        height: 64px;
+        top: 30px;
     }
 
     .timeline-item::after {
-        left: 20px;
+        left: 32px !important;
+        top: 58px;
     }
 
     .content {
         max-width: 100%;
+        padding: 22px 20px;
     }
 }

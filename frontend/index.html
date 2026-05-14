@@ -70,7 +70,7 @@
                     <!-- Bloque 1 -->
                     <div class="story-row">
                         <div class="story-img">
-                            <img src="assets/images/icons/user.svg" alt="novio">
+                            <img src="assets/images/history/novio.jpeg" alt="novio">
                         </div>
                         <div class="story-text">
                             <p><strong>
@@ -94,7 +94,7 @@
                             </strong></p>
                         </div>
                         <div class="story-img">
-                            <img src="assets/images/icons/user.svg" alt="novia">
+                            <img src="assets/images/history/novia.jpeg" alt="novia">
                         </div>
                     </div>
 
@@ -196,35 +196,19 @@
 
         <!-- Ubicación -->
         <section id="locations">
-            <h2>Ubicaciones</h2>
+            <h2>Ubicación</h2>
 
-            <div class="location-grid">
-
-                <!--Ceremonia-->
+            <div class="location-grid location-grid-single">
+                <!-- Salón -->
                 <div class="location-card">
                     <div class="location-info">
-                        <h3>Ceremonia</h3>
-                        <p class="place">Iglesia Bautista "El buen pastor"</p>
+                        <h3>Te esperamos en:</h3>
+                        <p class="place">Salón Gardenias</p>
                         <p class="time">4:00 PM</p>
-                        <p class="address">Dirección aquí</p>
                     </div>
-                    <a href="https://www.google.com/maps/place/Iglesia+Bautista+%C2%ABEl+Buen+Pastor%C2%BB/@16.3303335,-96.5975505,20z/data=!4m16!1m9!3m8!1s0x85b8a5e717220ef7:0x39c2a44a49cad48!2sIglesia+Bautista+%C2%ABEl+Buen+Pastor%C2%BB!8m2!3d16.3305263!4d-96.5977907!9m1!1b1!16s%2Fg%2F11f57wc18b!3m5!1s0x85b8a5e717220ef7:0x39c2a44a49cad48!8m2!3d16.3305263!4d-96.5977907!16s%2Fg%2F11f57wc18b?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-image">
-                        <img src="assets/images/icons/ceremonial.png" alt="Ceremonia">
-                        <span class="overlay-text">Ver ubicación</span>
-                    </a>
-                </div>
-
-                <!--Recepción-->
-                <div class="location-card">
-                    <div class="location-info">
-                        <h3>Recepción</h3>
-                        <p class="place">Salón "Gardenias</p>
-                        <p class="time">6:00 PM</p>
-                        <p class="address">Dirección aquí</p>
-                    </div>
-                    <a href="" target="_blank" class="location-image">
-                        <img src="assets/images/icons/reception.png" alt="Ceremonia">
-                        <span class="overlay-text">Ver ubicación</span>
+                    <a href="https://www.google.com/maps/place/Sal%C3%B3n+de+Usos+M%C3%BAltiples+%E2%80%9CGardenias%E2%80%9D/@16.3214601,-96.5896568,17z/data=!4m6!3m5!1s0x85b8a5002e35f681:0x217ff238f914b280!8m2!3d16.3214601!4d-96.5896568!16s%2Fg%2F11yzf46972?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-image">
+                        <img src="assets/images/icons/reception.png" alt="Recepción">
+                        <span class="overlay-text">Ver ubiación</span>
                     </a>
                 </div>
             </div>
@@ -336,6 +320,12 @@
                             <input type="text" id="declineSurname" placeholder="Apellido" required>
                         </div>
                         <input type="tel" id="declinePhone" placeholder="Teléfono" required>
+                        <input type="email" id="declineEmail" placeholder="Correo electrónico" required>
+                        <select id="declineCity" required>
+                            <option value="">¿Vienes fuera de Miahuatlán?</option>
+                            <option value="yes">Sí</option>
+                            <option value="no">No</option>
+                        </select>
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
