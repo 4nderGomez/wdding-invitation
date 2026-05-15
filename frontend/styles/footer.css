@@ -171,6 +171,54 @@ footer::before {
     }
 }
 
+/* Autor */
+
+.footer-author {
+    position: relative;
+    z-index: 5;
+    margin-top: 45px;
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid rgba(93, 136, 176, 0.18);
+}
+
+.author-line {
+    font-size: 0.82rem;
+    letter-spacing: 1.2px;
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+.footer-author strong {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-primary);
+}
+
+.footer-author a {
+    font-size: 0.88rem;
+    text-decoration: none;
+    color: var(--blue-accent);
+    transition: 0.3s ease;
+}
+
+.footer-author a:hover {
+    color: var(--blue-primary);
+    transform: translateY(-1px);
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.72rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
 /* Celulares muy pequeños */
 @media (max-width: 390px) {
     footer {
@@ -195,5 +243,29 @@ footer::before {
         width: 9px;
         height: 14px;
         opacity: 0.5;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer-author {
+        margin-top: 35px;
+        padding-top: 18px;
+        gap: 4px;
+    }
+
+    .author-line {
+        font-size: 0.72rem;
+        text-align: center;
+    }
+
+    .footer-author strong {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .footer-author a {
+        font-size: 0.78rem;
+        word-break: break-word;
     }
 }

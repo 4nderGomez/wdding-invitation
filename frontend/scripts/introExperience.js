@@ -16,7 +16,6 @@ export function initIntroExperience() {
         }
 
         intro.classList.add("hide");
-
         document.body.style.overflow = "auto";
     });
 }

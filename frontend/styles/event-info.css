@@ -87,6 +87,7 @@
     object-fit: contain;
     padding: 0;
     border-radius: 50%;
+    flex-direction: column;
     transition: transform 0.45s ease;
 }
 
@@ -94,22 +95,36 @@
     transform: scale(1.08);
 }
 
-.overlay-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
+.photoGuest-image a,
+.upload-link {
+    display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    font-family: var(--font-title);
-    font-size: 1.1rem;
-    color: white;
-    background: rgba(28,43,72,0.55);
-    opacity: 0;
-    transition: 0.35s ease;
+    text-decoration: none;
 }
 
-.location-image:hover .overlay-text {
-    opacity: 1;
+.tap-hint {
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: var(--blue-accent);
+    opacity: 0.72;
+    animation: tapHintPulse 2.5s ease-in-out infinite;
+}
+
+.location-hint {
+    display: inline-block;
+    margin-top: 10px;
+
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+
+    color: var(--blue-accent);
+
+    opacity: 0.78;
+
+    animation: tapHintPulse 2.5s ease-in-out infinite;
 }
 
 .event-bottom-grid {
@@ -194,6 +209,23 @@
 
 .upload-link img:hover {
     transform: rotate(5deg) scale(1.1);
+}
+
+.location-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tap-location {
+    display: none;
+    margin-top: 14px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: var(--blue-accent);
+    opacity: 0.85;
+    animation: tapHintPulse 2.5s ease-in-out infinite;
 }
 
 /* Tablets grandes */
@@ -424,5 +456,41 @@
     .upload-content p {
         font-size: 0.88rem;
         line-height: 1.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .tap-hint {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 0.78rem;
+    }
+
+    .photoGuest-image img,
+    .upload-link img {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tap-hint {
+        font-size: 0.74rem;
+        opacity: 0.85;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .location-hint {
+        margin-top: 8px;
+        font-size: 0.74rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .location-hint {
+        font-size: 0.72rem;
+        opacity: 0.9;
     }
 }
