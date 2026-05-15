@@ -51,6 +51,17 @@
     }
 }
 
+@keyframes introFloat {
+
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
 @keyframes pulse {
     0% {transform: translateX(10%) scale(1);}
     50% {transform: scaleX(10%) scale(1.2);}
@@ -64,6 +75,17 @@
     }
     50% {
         transform: scale(1.05);
+    }
+}
+
+@keyframes introPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
     }
 }
 

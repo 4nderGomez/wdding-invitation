@@ -11,8 +11,28 @@
 <body>
     <!-- Musica en loop de fondo-->
     <audio id="backgroundMusic" loop>
-        <source src="assets/music/misterio.mp3" type="audio/mpg">
+        <source src="assets/music/misterio.mp3" type="audio/mp3">
     </audio>
+    
+    <div id="introScreen">
+        <!-- Flores -->
+        <img src="assets/images/imagens/flower-2.png" alt="" class="intro-flower intro-flower-left">
+        <img src="assets/images/imagens/flower-2.png" alt="" class="intro-flower intro-flower-right">
+    
+        <!-- Contenido -->
+        <div class="intro-content">
+            <p class="intro-top">Nuestra boda</p>
+            <h1 class="intro-title">David & Magui</h1>
+            <p class="intro-date">19 de diciembre 2026</p>
+            <!-- Logo -->
+            <button id="enterExperience" class="intro-logo-btn">
+                <div class="intro-logo-wrapper">
+                    <img src="assets/images/hero/logo-2.svg" alt="Logo">
+                </div>
+                <span class="intro-text">Toca el logo para comenzar</span>
+            </button>
+        </div>
+    </div>
 
     <!--Pantalla principal -->
     <header id="hero">

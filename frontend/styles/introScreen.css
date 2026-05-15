@@ -1,0 +1,208 @@
+body {
+    overflow: hidden;
+}
+
+#introScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(180,203,235,0.28),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #dceaf7 0%,
+            #edf4fb 45%,
+            #d9e7f4 100%
+        );
+        transition:
+            opacity 1s ease,
+            visibility 1s ease;
+}
+
+#introScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-flower {
+    position: absolute;
+    width: 260px;
+    opacity: 0.22;
+    pointer-events: none;
+    animation: introFloat 8s ease-in-out infinite;
+}
+
+.intro-flower-left {
+    top: -40px;
+    left: -30px;
+    transform: rotate(-10deg);
+}
+
+.intro-flower-right {
+    right: -30px;
+    bottom: -40px;
+    transform: rotate(180deg);
+    animation-delay: 2s;
+}
+
+/* Contenido */
+.intro-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.intro-top {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color:  #6d84a0;
+}
+
+.intro-title {
+    font-family: var(--font-script);
+    font-size: clam(4rem, 8vw, 6.5rem);
+    line-height: 0.9s;
+    margin-bottom: 24px;
+    color: #243B5A;
+    text-shadow:
+        0 8px 24px rgba(255,255,255,0.5),
+        0 4px 14px rgba(36,59,90,0.12);
+}
+
+.intro-date {
+    margin-bottom: 40px;
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: #5D88B0;
+}
+
+/* Botón */
+.intro-logo-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.intro-logo-wrapper {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.65),
+            rgba(255,255,255,0.35)
+        );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow:
+        0 20px 40px rgba(36,59,90,0.12),
+        inset 0 2px 8px rgba(255,255,255,0.4);
+    animation:
+        introPulse 3s ease-in-out infinite;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.intro-logo-wrapper:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 28px 50px rgba(36,59,90,0.18),
+        inset 0 2px 8px rgba(255,255,255,0.45);
+}
+
+.intro-logo-wrapper img {
+    width: 105px;
+}
+
+/* Texto de clikear */
+.intro-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #5E748C;
+    opacity: 0.92;
+}
+
+@media (max-width: 768px) {
+
+    .intro-flower {
+        width: 190px;
+    }
+
+    .intro-title {
+        font-size: 4.5rem;
+    }
+
+    .intro-logo-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .intro-logo-wrapper img {
+        width: 92px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .intro-content {
+        padding: 30px 20px;
+    }
+
+    .intro-top {
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+    }
+
+    .intro-title {
+        font-size: 3.5rem;
+        margin-bottom: 18px;
+    }
+
+    .intro-date {
+        font-size: 0.95rem;
+        margin-bottom: 34px;
+    }
+
+    .intro-logo-wrapper {
+        width: 112px;
+        height: 112px;
+    }
+
+    .intro-logo-wrapper img {
+        width: 80px;
+    }
+
+    .intro-text {
+        font-size: 0.82rem;
+    }
+
+    .intro-flower {
+        width: 150px;
+        opacity: 0.18;
+    }
+}
