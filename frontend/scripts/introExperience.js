@@ -8,14 +8,33 @@ export function initIntroExperience() {
     music.volume = 0.4;
     music.loop = true;
 
+    let musicStarted = false;
+
     enterBtn.addEventListener("click", async() => {
         try {
             await music.play();
-        } catch(erro) {
+            musicStarted = true;
+        } catch(error) {
             console.log("El navegador bloqueó la música");
         }
 
         intro.classList.add("hide");
         document.body.style.overflow = "auto";
+    });
+
+    document.addEventListener("visibilitychange", () => {
+
+        if(document.hidden) {
+
+            music.pause();
+
+        } else {
+
+            // Solo reanudar si ya había iniciado
+            if(musicStarted) {
+
+                music.play().catch(() => {});
+            }
+        }
     });
 }
