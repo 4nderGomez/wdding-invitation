@@ -3,7 +3,7 @@ export function initDynamicFields() {
     const addAdultBtn = document.getElementById("addAdult");
     const addKidBtn = document.getElementById("addKid");
 
-    if(!container) return;
+    if(!container || !addAdultBtn || !addKidBtn) return;
 
     let adultCount = 0;
     let kidCount = 0;
@@ -12,13 +12,29 @@ export function initDynamicFields() {
         adultCount++;
 
         const field = document.createElement("div");
-        field.classList.add("person-row");
+        field.classList.add("guest-card");
         field.dataset.type = "adult"
 
         field.innerHTML = `
-            <span class="bullet"></span>
-            <input type="text" placeholder="Nombre adulto ${adultCount}" required>
-            <input type="text" placeholder="Apellido adulto ${adultCount}" required>
+            <div class="guest-card-header">
+                <span class="guest-tag adult-tag">
+                    Acompañante adulto · ${adultCount}
+                </span>
+            </div>
+
+            <div class="guest-inputs">
+                <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Apellido"
+                    required
+                >
+            </div>
         `;
 
         container.appendChild(field);
@@ -28,13 +44,29 @@ export function initDynamicFields() {
         kidCount++;
 
         const field = document.createElement("div");
-        field.classList.add("person-row");
+        field.classList.add("guest-card");
         field.dataset.type = "kid";
 
         field.innerHTML = `
-            <span class="bullet"></span>
-            <input type="text" placeholder="Nombre niño ${kidCount}" required>
-            <input type="text" placeholder="Apellido niño ${kidCount}" required>
+            <div class="guest-card-header">
+                <span class="guest-tag kid-tag">
+                    Acompañante niño ·${kidCount}
+                </span>
+            </div>
+
+            <div class="guest-inputs">
+                <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Apellido"
+                    required
+                >
+            </div>
         `;
 
         container.appendChild(field);
