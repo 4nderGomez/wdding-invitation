@@ -52,10 +52,10 @@
             </div>
             <p class="hero-date">19 de diciembre 2026</p>
             <p class="hero-verse">
-                Las muchas aguas no podrán apagar el amor,
+                "Las muchas aguas no podrán apagar el amor,
                 Ni lo ahogarán los ríos.
                 Si diese el hombre todos los bienes de su casa por este amor,
-                De cierto lo menospreciarían.
+                De cierto lo menospreciarían"
             </p>
             <small class="hero-reference">
                 Cantar de los Cantares 8:7
@@ -70,7 +70,10 @@
     <main id="mainContent">
         <!-- Cuenta regresiva -->
         <section id="countdown">
-            <p class="count-title">FALTAN</p>
+            <p class="count-invitation">
+                Estás cordialmente invitado a celebrar el inicio de la familia
+                <span>Gómez Santiago</span>
+            </p>
             <div id="timer">
                 <div><p>Días</p><span id="days"></span></div>
                 <div><p>Horas</p><span id="hours"></span></div>
@@ -325,28 +328,37 @@
 
             <!-- Izquierda -->
             <div class="rsvp-left">
-                <!-- Calendario-->
-                <div class="calendar-card">
-                    <p class="calendar-month">Diciembre 2026</p>
+                <div class="rsvp-calendar-box">
+                    <!-- Calendario-->
+                    <div class="calendar-card">
+                        <p class="calendar-month">Diciembre 2026</p>
 
-                    <div class="calendar-grid">
-                        <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
-                        <!-- Días vacios en diciembre-->
-                        <span></span><span></span>
-                        <!-- Días -->
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
-                        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-                        <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
-                        <!-- Día especial -->
-                        <span class="heart-day">
-                            19
-                            <div class="heart">
-                                <img src="assets/images/icons/rings.svg" alt="corazon">
-                            </div>
-                        </span>
-                        <!-- Días -->
-                        <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
-                        <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                        <div class="calendar-grid">
+                            <span>D</span><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span>
+                            <!-- Días vacios en diciembre-->
+                            <span></span><span></span>
+                            <!-- Días -->
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                            <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+                            <!-- Día especial -->
+                            <span class="heart-day">
+                                19
+                                <div class="heart">
+                                    <img src="assets/images/icons/rings.svg" alt="corazon">
+                                </div>
+                            </span>
+                            <!-- Días -->
+                            <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+                            <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                        </div>
+                    </div>
+
+                    <!-- Aviso RSVP -->
+                    <div class="rsvp-notice">
+                        <strong>Importante</strong>
+                        <p>* Por favor, registra la asistencia una sola vez</p>
+                        <p>* Solo una persona de la familia debe confirmar y agregar a los demás acompañantes</p>
                     </div>
                 </div>
             </div>
@@ -365,9 +377,14 @@
                     </select>
 
                     <button id="confirmDecisionBtn">Continuar</button>
+
+                    <div class="rsvp-deadline-note">
+                        <strong>Importante</strong>
+                        <p>Tienes hasta el <span>15 de noviembre</span> para confirmar tu asistencia.</p>
+                    </div>
                 </div>
 
-                <!-- BLOQUE DECLINE (OCULTO) -->
+                <!-- Decide no asistir -->
                 <div id="declineSection" class="hidden">
                     <button id="backToDecision" class="back-btn">✖</button>
                     <h3>Lamentamos que no puedas asistir</h3>
@@ -384,6 +401,12 @@
                             <option value="no">No</option>
                         </select>
                         <button type="submit">Enviar</button>
+                        <div class="decline-warning-note">
+                            <strong>Aviso importante</strong>
+                            <p>
+                                Sí envías esta respuesta, tomaremos como definitiva tu confirmación de no asistencia.
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>

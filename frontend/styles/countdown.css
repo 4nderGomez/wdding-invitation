@@ -64,15 +64,44 @@
     opacity: 0.8;
 }
 
-.count-title {
+.count-invitation {
     position: relative;
     z-index: 2;
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-    letter-spacing: 8px;
-    margin-bottom: 42px;
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-family: var(--font-romantic);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-style: italic;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
     color: var(--blue-primary);
-    animation: softAppear 1s ease forwards;
+    animation: fadeUp 1.4s ease forwards;
+}
+
+.count-invitation span {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: var(--font-title);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--blue-primary);
+    letter-spacing: 1px;
+}
+
+.count-invitation::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    margin: 22px auto 0;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--blue-secondary),
+        transparent
+    );
+    opacity: 0.75;
 }
 
 #timer {
@@ -346,5 +375,27 @@
 
     .wedding-phrase {
         font-size: 1.45rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .count-invitation {
+        max-width: 92%;
+
+        margin: -4px auto 34px;
+
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .count-invitation {
+        font-size: 0.85rem;
+        line-height: 1.6;
+
+        margin-bottom: 28px;
     }
 }

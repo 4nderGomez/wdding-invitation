@@ -162,6 +162,41 @@
     display: none !important;
 }
 
+.rsvp-deadline-note,
+.decline-warning-note {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(255, 245, 245, 0.82);
+    border: 1px solid rgba(190, 55, 55, 0.22);
+    box-shadow: 0 12px 28px rgba(190, 55, 55, 0.07);
+}
+
+.rsvp-deadline-note strong,
+.decline-warning-note strong {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-title);
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.7px;
+    color: #a33232;
+}
+
+.rsvp-deadline-note p,
+.decline-warning-note p {
+    margin: 0;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: #8f2d2d;
+    text-align: justify;
+}
+
+.rsvp-deadline-note span {
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
 
     .rsvp-wrapper {
@@ -318,5 +353,23 @@
     #declineForm input,
     #declineForm select {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .rsvp-deadline-note,
+    .decline-warning-note {
+        margin-top: 14px;
+        padding: 13px 14px;
+    }
+
+    .rsvp-deadline-note strong,
+    .decline-warning-note strong {
+        font-size: 0.9rem;
+    }
+
+    .rsvp-deadline-note p,
+    .decline-warning-note p {
+        font-size: 0.8rem;
     }
 }
