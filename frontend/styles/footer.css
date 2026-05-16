@@ -171,6 +171,17 @@ footer::before {
     }
 }
 
+.footer-penguins {
+    display: block;
+    width: min(100%, 200px);
+    margin: auto;
+    opacity: 0.92;
+    filter:
+        drop-shadow(0 10px 20px rgba(36,59,90,0.12));
+    animation: penguinFloat 5s ease-in-out infinite;
+}
+
+
 /* Autor */
 
 .footer-author {
@@ -267,5 +278,16 @@ footer::before {
     .footer-author a {
         font-size: 0.78rem;
         word-break: break-word;
+    }
+}
+
+@keyframes penguinFloat {
+
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
     }
 }
